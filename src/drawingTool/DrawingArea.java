@@ -14,15 +14,10 @@ import javax.swing.JPanel;
 public class DrawingArea extends JPanel {
     private static final long serialVersionUID = 1L;
 
-
-
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
 
-        int[] polygonX = {10, 60, 30};
-        int[] polygonY = {10, 10, 60};
-        int polygonN = 3;
-
+        /*
         pen.drawLine(100, 100, 800, 800);
 
         pen.setColor(Color.blue); // a color constant
@@ -33,7 +28,16 @@ public class DrawingArea extends JPanel {
 
         pen.setColor(new Color(255,100,100)); // RGB representation
         pen.drawString("Hello World", 666, 280);
-
+        
+        // Draw the triangle
+        int[] polygonX = {10, 60, 30};
+        int[] polygonY = {10, 10, 60};
+        int polygonN = 3;
         pen.drawPolygon(polygonX, polygonY, polygonN);
+        */
+        
+        Drawing.set(pen);
+        lanternFish myLanternFish = new lanternFish();
+        myLanternFish.draw();
     }
 }
