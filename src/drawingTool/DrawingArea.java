@@ -8,6 +8,7 @@
 package drawingTool;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -37,7 +38,14 @@ public class DrawingArea extends JPanel {
         */
         
         Drawing.set(pen);
-        lanternFish myLanternFish = new lanternFish();
-        myLanternFish.draw();
+        ArrayList<lanternFish> fishGroup = new ArrayList<lanternFish>(); 
+        for (int i=0; i < 5; i++) {
+        	fishGroup.add(new lanternFish(300+ 100*i, 260));
+        }
+        
+        //lanternFish myLanternFish = new lanternFish(300, 260);
+        for (lanternFish f : fishGroup) {
+        	f.draw();	
+        }
     }
 }
