@@ -1,5 +1,6 @@
 package drawingTool;
 
+// public class lanternFish extends Fish{ 
 public class lanternFish {
 	private int coordsX;
 	private int coordsY;
