@@ -40,8 +40,8 @@ public class DrawingArea extends JPanel {
         pen.drawPolygon(polygonX, polygonY, polygonN);
 
 
-        Fish funny = new Fish(500,360);
-        funny.draw();
+        Fish funny = new Fish(400,260);
+        //funny.draw(); //ERROR
 
         Drawing.set(pen);
         ArrayList<Anglerfish> fishGroup = new ArrayList<Anglerfish>();

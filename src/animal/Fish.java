@@ -32,7 +32,8 @@ public class Fish { // abstract
     }
 
     public void draw() {
-        //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
+        Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
         Drawing.pen().fillOval(coordsX, coordsY, 60, 50);
+    	//Drawing.pen().drawLine(100, 100, 800, 800);
     }
 }
