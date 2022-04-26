@@ -7,6 +7,9 @@
 
 package drawingTool;
 
+import animal.Anglerfish;
+import animal.Fish;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.awt.Graphics;
@@ -18,11 +21,11 @@ public class DrawingArea extends JPanel {
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
 
-        /*
-        pen.drawLine(100, 100, 800, 800);
+        String color = "#ffff00";
 
-        pen.setColor(Color.blue); // a color constant
-        pen.drawRect(10, 10, 200, 300);
+
+        pen.setColor(Color.decode(color)); // a color constant
+        pen.fillRect(10, 10, 200, 300);
 
         pen.setColor(Color.decode("#7a5230")); // HEX representation
         pen.fillOval(300, 234, 800, 100);
@@ -35,16 +38,19 @@ public class DrawingArea extends JPanel {
         int[] polygonY = {10, 10, 60};
         int polygonN = 3;
         pen.drawPolygon(polygonX, polygonY, polygonN);
-        */
-        
+
+
+        Fish funny = new Fish(500,360);
+        funny.draw();
+
         Drawing.set(pen);
-        ArrayList<lanternFish> fishGroup = new ArrayList<lanternFish>(); 
+        ArrayList<Anglerfish> fishGroup = new ArrayList<Anglerfish>();
         for (int i=0; i < 5; i++) {
-        	fishGroup.add(new lanternFish(300+ 100*i, 260));
+        	fishGroup.add(new Anglerfish(300+ 100*i, 260));
         }
         
         //lanternFish myLanternFish = new lanternFish(300, 260);
-        for (lanternFish f : fishGroup) {
+        for (Anglerfish f : fishGroup) {
         	f.draw();	
         }
     }
