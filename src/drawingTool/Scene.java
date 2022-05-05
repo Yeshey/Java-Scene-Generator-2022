@@ -30,9 +30,9 @@ public class Scene {
 		Drawing.pen().drawLine(100, 200, 800, 800);
 		
 		
+		
         Fish funny = new Fish(400,260);
         funny.draw();
-
         
         ArrayList<Anglerfish> fishGroup = new ArrayList<Anglerfish>();
         for (int i=0; i < 5; i++) {
