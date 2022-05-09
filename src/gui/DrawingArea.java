@@ -22,6 +22,11 @@ public class DrawingArea extends JPanel implements ActionListener{
 
     private JPanel westPanel = new JPanel();
     private JButton b1 = new JButton("1");
+    private Scene Ocean;
+
+    public void DrawingArea(){
+        Ocean = null;
+    }
     
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
@@ -57,9 +62,10 @@ public class DrawingArea extends JPanel implements ActionListener{
         // ------------- Layout Tests ------------- //
         
         Drawing.set(pen); // We need this before being able to draw anything
-        Scene Ocean = new Scene();
+        if (Ocean == null) {
+            Ocean = new Scene();
+        }
         Ocean.draw();
-        
     }
     
     @Override
