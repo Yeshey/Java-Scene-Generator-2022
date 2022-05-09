@@ -20,8 +20,6 @@ import javax.swing.JPanel;
 public class DrawingArea extends JPanel implements ActionListener{
     private static final long serialVersionUID = 1L;
 
-    private JPanel westPanel = new JPanel();
-    private JButton b1 = new JButton("1");
     private Scene Ocean;
 
     public void DrawingArea(){
@@ -31,35 +29,8 @@ public class DrawingArea extends JPanel implements ActionListener{
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
 
-        // ------------- Layout Tests ------------- //
-        //setLayout(new BorderLayout());
-        setLayout(new GridLayout(12,1,15,20));
-        setLayout(new FlowLayout());
-
-
-        add(westPanel, BorderLayout.WEST);
-        //private JButton b1 = new JButton("1");
-        b1.setToolTipText("This text appears when mouse hovers");
-        b1.addActionListener(this); // needs implements ActionListener
-        westPanel.add(b1, BorderLayout.SOUTH); // or you could just do add, it doesnt have to be in a panel
-
-        /*
-        public class Buttons{
-        	private JButton housesButton = new JButton("Houses");
-
-	        public void addActionListener(ActionListener listener) {
-	        	housesButton.addActionListener(listener)
-	        }
-
-	        public void actionPerformed(ActionEvent e) {
-	        	if (e.getSource() == buttons.getHouseButton()) {
-	        		tifyUpDrawingArea();
-	        		drawing.getVillage().setHouses();
-	        	}
-	        }
-        }*/
-
-        // ------------- Layout Tests ------------- //
+        JButton but1 = new JButton("4"); // todo Problem, why does this work here, but not in the Button Class??
+        add(but1);
         
         Drawing.set(pen); // We need this before being able to draw anything
         if (Ocean == null) {
