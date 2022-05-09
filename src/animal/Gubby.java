@@ -2,6 +2,7 @@ package animal;
 
 import gui.Drawing;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -19,7 +20,10 @@ public class Gubby extends Fish {
         this.colorHex = colorHex;
     }
 
+
+
     public void draw() {
+        Drawing.pen().setColor(Color.decode("#7CCC30"));
         Drawing.pen().fillOval(coordsX,coordsY,30,30);
     }
 }
