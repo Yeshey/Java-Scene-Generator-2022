@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-package drawingTool;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -25,27 +25,27 @@ public class DrawingArea extends JPanel implements ActionListener{
     
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
-        
+
         // ------------- Layout Tests ------------- //
         //setLayout(new BorderLayout());
         setLayout(new GridLayout(12,1,15,20));
         setLayout(new FlowLayout());
-        
-        
+
+
         add(westPanel, BorderLayout.WEST);
         //private JButton b1 = new JButton("1");
         b1.setToolTipText("This text appears when mouse hovers");
         b1.addActionListener(this); // needs implements ActionListener
         westPanel.add(b1, BorderLayout.SOUTH); // or you could just do add, it doesnt have to be in a panel
-        
+
         /*
         public class Buttons{
         	private JButton housesButton = new JButton("Houses");
-        
+
 	        public void addActionListener(ActionListener listener) {
 	        	housesButton.addActionListener(listener)
 	        }
-	        
+
 	        public void actionPerformed(ActionEvent e) {
 	        	if (e.getSource() == buttons.getHouseButton()) {
 	        		tifyUpDrawingArea();
@@ -53,7 +53,7 @@ public class DrawingArea extends JPanel implements ActionListener{
 	        	}
 	        }
         }*/
-        
+
         // ------------- Layout Tests ------------- //
         
         Drawing.set(pen); // We need this before being able to draw anything

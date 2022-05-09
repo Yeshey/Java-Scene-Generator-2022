@@ -1,10 +1,9 @@
 package animal;
 
-import drawingTool.Drawing;
+import gui.Drawing;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Fish { // abstract
@@ -15,8 +14,16 @@ public class Fish { // abstract
     private String colorHex;
     private int size;
 
-    private ArrayList<Point2D.Double> coordinates;
+    public Fish() {
+    }
 
+    public Fish(String name, int coordsX, int coordsY, String colorHex, int size) {
+        this.name = name;
+        this.coordsX = coordsX;
+        this.coordsY = coordsY;
+        this.colorHex = colorHex;
+        this.size = size;
+    }
 
     public Fish(int coordsX, int coordsY) {
         this.coordsX = coordsX;
@@ -36,4 +43,8 @@ public class Fish { // abstract
         Drawing.pen().fillOval(coordsX, coordsY, 60, 50);
     	//Drawing.pen().drawLine(100, 100, 800, 800);
     }
+
+
+
+
 }
