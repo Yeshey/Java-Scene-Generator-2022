@@ -19,20 +19,20 @@ import javax.swing.JPanel;
 
 import java.awt.Dimension;
 
-public class DrawingArea extends JPanel{
+public class DrawingArea extends JPanel {
     private static final long serialVersionUID = 1L;
 
     private Scene Ocean; //composite
 
-    public void DrawingArea(){
+    public void DrawingArea() {
         Ocean = new Scene();
     }
-    
+
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
-        
+
         Drawing.set(pen); // We need this before being able to draw anything
-        
+
         if (Ocean == null) {
             Ocean = new Scene();
         }

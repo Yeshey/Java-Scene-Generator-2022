@@ -5,21 +5,19 @@ import java.util.ArrayList;
 
 import animal.Anglerfish;
 import animal.Fish;
-import environment.*;
+import environment.Terrain;
 
 import javax.swing.*;
 
 //import drawingTool.Drawing;
 
-public class Scene implements LocatedRectangle{
+public class Scene implements LocatedRectangle {
 
     private JPanel westPanel = new JPanel();
     private JButton b1 = new JButton("2");
     private ArrayList<Fish> fishArrayList = new ArrayList<>();
 
     private Fish fish; // aggregate
-    private Coral coral; // aggregate
-    private Plant plant; // aggregate
     private Terrain terrain; // aggregate
     private Button guiButton; //composite
 
@@ -36,6 +34,8 @@ public class Scene implements LocatedRectangle{
         for (int i = 0; i < 10; i++) {
             int coordsX = between(10, 800);
             int coordsY = between(10, 800);
+
+
             int size = between(1, 3);
 
             Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", size);
@@ -43,15 +43,15 @@ public class Scene implements LocatedRectangle{
         }
     }
 
-    public void drawFishes(){
+
+    public void drawFishes() {
         for (int i = 0; i < fishArrayList.size(); i++) {
             fishArrayList.get(i).draw();
         }
 
-    address();
+        address();
 
     }
-
 
 
     public void draw() {
