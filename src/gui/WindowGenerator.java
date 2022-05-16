@@ -9,9 +9,9 @@ package gui;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-public class windowGenerator {
+public class WindowGenerator extends JFrame{
+/*
     private JFrame applicationFrame;
 
     public windowGenerator(String title) {
@@ -20,14 +20,27 @@ public class windowGenerator {
         applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
         applicationFrame.setVisible(true);
     }
+*/
 
-    public void addACanvas(JPanel p) {
-        applicationFrame.add(p);
+    public WindowGenerator(String window) {
+        super(window);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        Dimension screenSize = getToolkit().getScreenSize();
+        setBounds(0, 0, screenSize.width, screenSize.height);
+        setVisible(true);
+    }
+
+    public void addACanvas() {
+        DrawingArea dA = new DrawingArea();
+        add(dA);
     }
 
     public static void main(String[] args) {
-    	windowGenerator anApplication = new windowGenerator("Window Title"); // Create a window
-        anApplication.addACanvas(new DrawingArea()); // Incert a Drawing area into the window
+    	WindowGenerator anApplication = new WindowGenerator("Window Title"); // Create a window
+        anApplication.addACanvas();
+
+        //anApplication.addACanvas(new DrawingArea()); // Insert a Drawing area into the window
     }
 }
 

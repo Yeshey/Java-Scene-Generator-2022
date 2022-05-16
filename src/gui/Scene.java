@@ -24,7 +24,7 @@ public class Scene{
 
 	public void draw() {
         String color = "#ffff00";
-
+/*
         Drawing.pen().setColor(Color.decode(color)); // a color constant
         Drawing.pen().fillRect(10, 10, 200, 300);
 
@@ -33,7 +33,7 @@ public class Scene{
 
         Drawing.pen().setColor(new Color(255,100,100)); // RGB representation
         Drawing.pen().drawString("Hello World", 666, 280);
-        
+        */
         // Draw the triangle
         int[] polygonX = {10, 60, 30};
         int[] polygonY = {10, 10, 60};

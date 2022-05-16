@@ -1,16 +1,6 @@
-/**
- * Provides a panel which can be used for drawing.
- *
- * @author Björn Gottfried
- * @version 1.0
- */
-
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

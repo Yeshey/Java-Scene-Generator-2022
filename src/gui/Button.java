@@ -23,20 +23,22 @@ public class Button extends JPanel implements ActionListener{
         addActionListener(this); // needs implements ActionListener
 
         westPanel = new JPanel();
+        add(westPanel);
+        westPanel.setLayout(new GridLayout(1,2,10,10));
 
         //setLayout(new BorderLayout());
         //setLayout(new GridLayout(12,1,15,20));
         setLayout(new FlowLayout());
 
-        addToScene();
+        addToScene(westPanel);
 
         add(westPanel, BorderLayout.WEST);
     }
 
-    public void addToScene(){
-        westPanel.add(fishesButton, BorderLayout.SOUTH);
-        westPanel.add(terrainButton, BorderLayout.SOUTH);
-        westPanel.add(lightingButton, BorderLayout.SOUTH);
+    public void addToScene(JPanel jp){
+        jp.add(fishesButton, BorderLayout.SOUTH);
+        jp.add(terrainButton, BorderLayout.SOUTH);
+        jp.add(lightingButton, BorderLayout.SOUTH);
         System.out.println("OK");
     }
 

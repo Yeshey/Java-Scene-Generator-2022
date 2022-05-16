@@ -1,6 +1,6 @@
 package animal;
 
-public class Whale {
+public class Whale extends Fish {
     private int coordsX;
     private int coordsY;
     private String colorHex;
