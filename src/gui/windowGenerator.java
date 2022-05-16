@@ -17,20 +17,24 @@ import javax.swing.JButton;
 
 public class windowGenerator extends JFrame{
     private JFrame applicationFrame;
+    private ButtonPanel bp;
 
     public windowGenerator(String title) {
         applicationFrame = new JFrame(title);
+		
+		setLayout(new BorderLayout());
+		Dimension screenSize = getToolkit().getScreenSize();
+		setBounds(0,0,screenSize.width, screenSize.height);
+        //applicationFrame.setVisible(true);
+    }
 
-        setLayout(new BorderLayout());
-        Dimension screenSize = applicationFrame.getToolkit().getScreenSize();
-        applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
-        applicationFrame.setVisible(true);
+    public void setStructure(){
+		bp = new ButtonPanel();
+		add(bp, BorderLayout.WEST);
 
-        JButton but1 = new JButton("1"); // todo Problem, why does this work here, but not in the Button Class??
-        add(but1);
-        add(but1);
-        add(but1);
-        add(but1);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
     }
 
     public void addACanvas(JPanel p) {
@@ -39,6 +43,7 @@ public class windowGenerator extends JFrame{
 
     public static void main(String[] args) {
     	windowGenerator anApplication = new windowGenerator("Window Title"); // Create a window
+        anApplication.setStructure();
         anApplication.addACanvas(new DrawingArea()); // Incert a Drawing area into the window
     }
 }
