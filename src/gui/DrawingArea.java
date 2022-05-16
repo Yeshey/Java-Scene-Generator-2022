@@ -23,7 +23,10 @@ public class DrawingArea extends JPanel implements ActionListener{
     private Scene Ocean;
 
     public void DrawingArea(){
-        Ocean = null;
+        Ocean = new Scene();
+  
+        JButton but1 = new JButton("1"); // todo Problem, why does this work here, but not in the Button Class??
+        add(but1);
     }
     
     protected void paintComponent(Graphics pen) {

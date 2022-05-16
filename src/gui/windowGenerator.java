@@ -7,18 +7,30 @@
 package gui;
 
 import java.awt.Dimension;
+import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class windowGenerator {
+import javax.swing.JButton;
+
+
+public class windowGenerator extends JFrame{
     private JFrame applicationFrame;
 
     public windowGenerator(String title) {
         applicationFrame = new JFrame(title);
+
+        setLayout(new BorderLayout());
         Dimension screenSize = applicationFrame.getToolkit().getScreenSize();
         applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
         applicationFrame.setVisible(true);
+
+        JButton but1 = new JButton("1"); // todo Problem, why does this work here, but not in the Button Class??
+        add(but1);
+        add(but1);
+        add(but1);
+        add(but1);
     }
 
     public void addACanvas(JPanel p) {
