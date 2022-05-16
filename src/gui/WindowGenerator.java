@@ -23,18 +23,25 @@ public class WindowGenerator extends JFrame{
         applicationFrame = new JFrame(title);
 		
 		setLayout(new BorderLayout());
-		Dimension screenSize = getToolkit().getScreenSize();
-		setBounds(0,0,screenSize.width, screenSize.height);
+		Dimension screenSize = applicationFrame.getToolkit().getScreenSize();
+		applicationFrame.setBounds(0,0,screenSize.width, screenSize.height);
+        applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
+        applicationFrame.setVisible(true);
         //applicationFrame.setVisible(true);
+
+/*
+        setLayout(new BorderLayout());
+        Dimension screenSize = applicationFrame.getToolkit().getScreenSize();
+        applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
+        applicationFrame.setVisible(true);
+        */
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
     public void setStructure(){
 		bp = new ButtonPanel();
-		add(bp, BorderLayout.WEST);
-
-		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
+		applicationFrame.add(bp, BorderLayout.WEST);
     }
 
     public void addACanvas(JPanel p) {
