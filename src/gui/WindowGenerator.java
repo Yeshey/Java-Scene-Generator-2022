@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 
 
-public class windowGenerator extends JFrame{
+public class WindowGenerator extends JFrame{
     private JFrame applicationFrame;
     private ButtonPanel bp;
 
-    public windowGenerator(String title) {
+    public WindowGenerator(String title) {
         applicationFrame = new JFrame(title);
 		
 		setLayout(new BorderLayout());
@@ -42,7 +42,7 @@ public class windowGenerator extends JFrame{
     }
 
     public static void main(String[] args) {
-    	windowGenerator anApplication = new windowGenerator("Window Title"); // Create a window
+    	WindowGenerator anApplication = new WindowGenerator("Window Title"); // Create a window
         anApplication.setStructure();
         anApplication.addACanvas(new DrawingArea()); // Incert a Drawing area into the window
     }
