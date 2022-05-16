@@ -11,7 +11,7 @@ import javax.swing.*;
 
 //import drawingTool.Drawing;
 
-public class Scene {
+public class Scene implements LocatedRectangle{
 
     private JPanel westPanel = new JPanel();
     private JButton b1 = new JButton("2");
@@ -38,7 +38,7 @@ public class Scene {
             int coordsY = between(10, 800);
             int size = between(1, 3);
 
-            Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", 1);
+            Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", size);
             fishArrayList.add(newRedFish);
         }
     }
@@ -47,7 +47,12 @@ public class Scene {
         for (int i = 0; i < fishArrayList.size(); i++) {
             fishArrayList.get(i).draw();
         }
+
+    address();
+
     }
+
+
 
     public void draw() {
         tenRedFishToArray("Joao");
@@ -84,4 +89,20 @@ public class Scene {
         }
 
     }
+
+    @Override
+    public Point address() {
+        return null;
+    }
+
+    @Override
+    public int width() {
+        return 0;
+    }
+
+    @Override
+    public int height() {
+        return 0;
+    }
+
 }
