@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class DrawingArea extends JPanel implements ActionListener{
     private static final long serialVersionUID = 1L;
 
-    private Scene Ocean;
+    private Scene Ocean; //composite
 
     public void DrawingArea(){
         Ocean = new Scene();

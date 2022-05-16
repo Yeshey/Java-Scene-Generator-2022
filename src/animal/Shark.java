@@ -1,6 +1,6 @@
 package animal;
 
-public class Shark {
+public class Shark extends Fish {
     private int coordsX;
     private int coordsY;
     private String colorHex;

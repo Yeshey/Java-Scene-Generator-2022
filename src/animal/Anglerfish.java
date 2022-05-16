@@ -3,7 +3,7 @@ package animal;
 import gui.Drawing;
 
 // public class lanternFish extends Fish{
-public class Anglerfish /*extends Fish*/ { // extends Fish
+public class Anglerfish extends Fish { // extends Fish
 	private int coordsX;
 	private int coordsY;
 	private String colorHex;

@@ -11,7 +11,7 @@ public class Fish { // abstract
     private String name;
     private int coordsX;
     private int coordsY;
-    private String colorHex;
+    private String colorHex = "#7CFC00";
     private int size;
 
     public Fish() {
@@ -39,7 +39,8 @@ public class Fish { // abstract
     }
 
     public void draw() {
-        Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
+        //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
+        Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
         Drawing.pen().fillOval(coordsX, coordsY, 60, 50);
     	//Drawing.pen().drawLine(100, 100, 800, 800);
     }
