@@ -36,6 +36,7 @@ public class Scene {
         for (int i = 0; i < 10; i++) {
             int coordsX = between(10, 800);
             int coordsY = between(10, 800);
+            int size = between(1, 3);
 
             Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", 1);
             fishArrayList.add(newRedFish);
