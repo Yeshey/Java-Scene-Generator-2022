@@ -35,8 +35,7 @@ public class WindowGenerator extends JFrame{
         applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
         applicationFrame.setVisible(true);
         */
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        applicationFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void setStructure(){
@@ -45,7 +44,7 @@ public class WindowGenerator extends JFrame{
     }
 
     public void addACanvas(JPanel p) {
-        applicationFrame.add(p);
+        applicationFrame.add(p, BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {
