@@ -17,8 +17,8 @@ public class Scene implements LocatedRectangle {
     private JButton b1 = new JButton("2");
     private ArrayList<Fish> fishArrayList = new ArrayList<>();
 
-    private Fish fish; // aggregate
-    private Terrain terrain; // aggregate
+    private Fish fish; // composite
+    private Terrain terrain; // composite
     private Button guiButton; //composite
 
     public Scene() {
