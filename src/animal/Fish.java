@@ -1,5 +1,8 @@
 package animal;
 
+import animal.bodyParts.Eye;
+import animal.bodyParts.Mouth;
+import animal.bodyParts.Tail;
 import gui.Drawing;
 
 import java.awt.*;
@@ -13,6 +16,9 @@ public class Fish { // abstract
     private int coordsY;
     private String colorHex = "#7CFC00";
     private int size;
+    private Eye fEye;
+    private Mouth fMouth;
+    private Tail fTail;
 
     public Fish() {
     }

@@ -58,6 +58,7 @@ public class Scene implements LocatedRectangle {
         tenRedFishToArray("Joao");
         drawFishes();
 
+        /* --------------- random shapes --------------- */ /*
         String color = "#ffff00";
 
         Drawing.pen().setColor(Color.decode(color)); // a color constant
@@ -87,6 +88,7 @@ public class Scene implements LocatedRectangle {
         for (Anglerfish f : fishGroup) {
             f.draw();
         }
+     */ /* --------------- random shapes --------------- */
 
     }
 
