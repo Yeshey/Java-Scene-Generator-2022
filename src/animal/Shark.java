@@ -1,9 +1,11 @@
 package animal;
 
+import java.awt.*;
+
 public class Shark extends Fish {
 
-    public Shark(int coordsX, int coordsY, String colorHex, int size) {
-        super(coordsX, coordsY, colorHex, size);
+    public Shark(Point coords, String colorHex, int size) {
+        super(coords, colorHex, size);
     }
 
     public void draw(){}

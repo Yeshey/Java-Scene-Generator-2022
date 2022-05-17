@@ -7,6 +7,8 @@ import animal.Anglerfish;
 import animal.Fish;
 import animal.Gubby;
 import environment.Terrain;
+import utils.Constants;
+import utils.RandDouble;
 
 import javax.swing.*;
 
@@ -24,19 +26,19 @@ public class Scene {
     }
 
     public void tenRedFishToArray() {
-        for (int i = 0; i < 10; i++) {
-            int coordsX = RandNum.between(10, 800);
-            int coordsY = RandNum.between(10, 800);
+        for (int i = 0; i < 50; i++) {
+            int coordsX = (int) RandDouble.between(10, 800);
+            int coordsY = (int) RandDouble.between(10, 800);
 
-            int size = RandNum.between(1, 3);
+            double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
-            Gubby newRedFish = new Gubby(coordsX, coordsY, "#ff0000", size);
+            Gubby newRedFish = new Gubby(new Point(coordsX, coordsY), "#ff0000", size);
 
             // before adding new Fish, test whether it intersects any other
             if ( vacantProperty(newRedFish) ){
                 fishArrayList.add(newRedFish);
             } else {
-                i+=1;
+                i-=1;
             }
         }
     }

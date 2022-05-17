@@ -8,44 +8,40 @@ import gui.LocatedRectangle;
 
 import java.awt.*;
 
+import utils.*;
+
+
+
 public class Fish implements LocatedRectangle{ // abstract
-
-    private String name;
-
     private Point coords;
-    private int coordsX;
-    private int coordsY;
 
     private String colorHex = "#7CFC00";
-    private int size;
+    private double size;
     private Eye fEye;
     private Mouth fMouth;
     private Tail fTail;
 
-    public Fish(int coordsX, int coordsY, String colorHex, int size) {
-        this.coordsX = coordsX;
-        this.coordsY = coordsY;
-
-        this.coords.setLocation(coordsX, coordsY);
+    public Fish(Point coords, String colorHex, double size) {
+        this.coords = coords;
 
         this.colorHex = colorHex;
         this.size = size;
 
         buildTail();
-        buildMouth();
-        buildEye();
+        //buildMouth();
+        //buildEye();
     }
 
     // getters
-    public int getCoordsX(){ return coordsX; }
-    public int getCoordsY(){ return coordsY; }
+    public int getCoordsX(){ return coords.x; }
+    public int getCoordsY(){ return coords.y; }
     // setters
-    public void setTail(int size, String hex){
-        fTail = new Tail(coords, this.size, size, hex); }
-    public void setEye(int size, String hex){
-        fEye = new Eye(size, hex); }
-    public void setMouth(int size, String hex){
-        fMouth = new Mouth(size, hex); }
+    public void setTail(int tailSize, String hex){
+        fTail = new Tail(coords, this.size, tailSize, hex); }
+    //public void setEye(int size, String hex){
+    //    fEye = new Eye(coords, this.size, eyeSize, hex); }
+    //public void setMouth(int size, String hex){
+    //    fMouth = new Mouth(coords, this.size, tailSize, hex); }
 
     public void buildTail(){ }
     public void buildMouth(){ }
@@ -53,29 +49,27 @@ public class Fish implements LocatedRectangle{ // abstract
 
     public void draw() {
         fTail.draw();
-        //fEye.draw(coordsX, coordsY, size);
-        //fMouth.draw(coordsX, coordsY, size);
+        //fEye.draw();
+        //fMouth.draw();
 
-        //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
-        Drawing.pen().fillOval(coordsX, coordsY, 60 * size, 50 * size);
-        //Drawing.pen().drawLine(100, 100, 800, 800);
+        Drawing.pen().fillOval((int)(coords.x-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(coords.y-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(Constants.FISH_NORMAL_DIAMETER * size), (int)(Constants.FISH_NORMAL_DIAMETER * size));
     }
 
     @Override
     public Point address() {
-        Point myPoint = new Point(coordsX,coordsY);
+        Point myPoint = new Point(coords.x,coords.y);
         return myPoint;
     }
 
     @Override
     public int width() {
-        return size*2;
+        return (int) (Constants.FISH_NORMAL_DIAMETER*size) + ((int)(Constants.FISH_NORMAL_DIAMETER*this.size*Constants.FISH_TAIL_X_SIZE) - (int)(Constants.FISH_NORMAL_DIAMETER*this.size/2));
     }
 
     @Override
     public int height() {
-        return size*2;
+        return (int) (Constants.FISH_NORMAL_DIAMETER*size);
     }
 
 }
