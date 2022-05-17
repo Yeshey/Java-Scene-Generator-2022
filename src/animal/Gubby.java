@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class Gubby extends Fish {
 
-    public Gubby(int coordsX, int coordsY, String colorHex) {
-        super(coordsX, coordsY, colorHex);
+    public Gubby(int coordsX, int coordsY, String colorHex, int size) {
+        super(coordsX, coordsY, colorHex, size);
     }
 
     public void draw() {
