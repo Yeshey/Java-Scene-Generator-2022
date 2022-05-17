@@ -25,25 +25,11 @@ public class Fish implements LocatedRectangle{ // abstract
     public Fish() {
     }
 
-    public Fish(String name, int coordsX, int coordsY, String colorHex, int size) {
-        this.name = name;
+    public Fish(int coordsX, int coordsY, String colorHex, int size) {
         this.coordsX = coordsX;
         this.coordsY = coordsY;
         this.colorHex = colorHex;
         this.size = size;
-    }
-
-    public Fish(int coordsX, int coordsY) {
-        this.coordsX = coordsX;
-        this.coordsY = coordsY;
-    }
-
-    public Fish(int coordsX, int coordsY, String colorHex) {
-        this.coordsX = coordsX;
-        this.coordsY = coordsY;
-        this.colorHex = colorHex;
-
-        //coordinates.add();
     }
 
     public int getCoordX(){
@@ -64,17 +50,18 @@ public class Fish implements LocatedRectangle{ // abstract
 
     @Override
     public Point address() {
-        return null;
+        Point myPoint = new Point(coordsX,coordsY); 
+        return myPoint;
     }
 
     @Override
     public int width() {
-        return 0;
+        return size;
     }
 
     @Override
     public int height() {
-        return 0;
+        return size;
     }
 
 }

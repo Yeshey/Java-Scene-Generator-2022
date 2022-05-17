@@ -1,14 +1,9 @@
 package animal;
 
 public class Whale extends Fish {
-    private int coordsX;
-    private int coordsY;
-    private String colorHex;
 
-    public Whale(int coordsX, int coordsY, String colorHex) {
-        this.coordsX = coordsX;
-        this.coordsY = coordsY;
-        this.colorHex = colorHex;
+    public Whale(int coordsX, int coordsY, String colorHex, int size) {
+        super(coordsX, coordsY, colorHex, size);
     }
 
     public void draw() {}

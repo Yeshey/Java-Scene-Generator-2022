@@ -19,21 +19,34 @@ public class Scene {
 
     public Scene() {
         //guiButton = new Button();
-        tenRedFishToArray("Joao");
+        tenRedFishToArray();
     }
 
-    public void tenRedFishToArray(String name) {
+    public void tenRedFishToArray() {
         for (int i = 0; i < 10; i++) {
             int coordsX = RandNum.between(10, 800);
             int coordsY = RandNum.between(10, 800);
 
             int size = RandNum.between(1, 3);
 
-            Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", size);
-            //if (newRedFish.intersects())
-            fishArrayList.add(newRedFish);
+            Fish newRedFish = new Fish(coordsX, coordsY, "#ff0000", size);
+
+            // before adding new Fish, test whether it intersects any other
+            if ( vacantProperty(newRedFish) ){
+                fishArrayList.add(newRedFish);
+            } else {
+                i+=1;
+            }
         }
     }
+    private boolean vacantProperty(Fish newF) {
+        boolean anyIntersection = false;
+        for (Fish h : fishArrayList){
+            anyIntersection = anyIntersection || h.intersects (newF);
+        }
+        return ! anyIntersection ;
+    }
+
 
 
     public void drawFishes() {
