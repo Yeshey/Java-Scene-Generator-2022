@@ -11,8 +11,11 @@ import java.awt.*;
 public class Fish implements LocatedRectangle{ // abstract
 
     private String name;
+
+    private Point coords;
     private int coordsX;
     private int coordsY;
+
     private String colorHex = "#7CFC00";
     private int size;
     private Eye fEye;
@@ -22,8 +25,15 @@ public class Fish implements LocatedRectangle{ // abstract
     public Fish(int coordsX, int coordsY, String colorHex, int size) {
         this.coordsX = coordsX;
         this.coordsY = coordsY;
+
+        this.coords.setLocation(coordsX, coordsY);
+
         this.colorHex = colorHex;
         this.size = size;
+
+        buildTail();
+        buildMouth();
+        buildEye();
     }
 
     // getters
@@ -37,7 +47,14 @@ public class Fish implements LocatedRectangle{ // abstract
     public void setMouth(int size, String hex){
         fMouth = new Mouth(size, hex); }
 
+    public void buildTail(){ }
+    public void buildMouth(){ }
+    public void buildEye(){ }
+
     public void draw() {
+        fTail.draw();
+        //fEye.draw(coordsX, coordsY, size);
+        //fMouth.draw(coordsX, coordsY, size);
 
         //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
@@ -53,12 +70,12 @@ public class Fish implements LocatedRectangle{ // abstract
 
     @Override
     public int width() {
-        return size;
+        return size*2;
     }
 
     @Override
     public int height() {
-        return size;
+        return size*2;
     }
 
 }

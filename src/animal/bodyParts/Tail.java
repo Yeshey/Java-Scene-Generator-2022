@@ -3,6 +3,8 @@ package animal.bodyParts;
 import animal.Fish;
 import gui.Drawing;
 
+import java.awt.*;
+
 public class Tail {
 
     private Point coordsFish;
@@ -10,8 +12,9 @@ public class Tail {
     private int sizeTail;
     private String colorHex;
 
-    public Tail(int size, String colorHex) {
-        this.size = size;
+    public Tail(Point coords, int size ,int sizeTail, String colorHex) {
+        coordsFish = coords;
+        this.sizeTail = sizeTail;
         this.colorHex = colorHex;
     }
 
