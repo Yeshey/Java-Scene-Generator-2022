@@ -1,5 +1,7 @@
 package gui;
 
+import animal.Fish;
+
 import java.awt.Graphics;
 
 public class Drawing {

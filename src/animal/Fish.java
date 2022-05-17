@@ -19,10 +19,6 @@ public class Fish implements LocatedRectangle{ // abstract
     private Mouth fMouth;
     private Tail fTail;
 
-    // remove all constructors we're not using ------------------
-    public Fish() {
-    }
-
     public Fish(int coordsX, int coordsY, String colorHex, int size) {
         this.coordsX = coordsX;
         this.coordsY = coordsY;
@@ -30,21 +26,22 @@ public class Fish implements LocatedRectangle{ // abstract
         this.size = size;
     }
 
-    public int getCoordX(){
-        return coordsX;
-    }
-    public int getCoordsY(){
-        return coordsY;
-
-    }
+    // getters
+    public int getCoordsX(){ return coordsX; }
+    public int getCoordsY(){ return coordsY; }
+    // setters
+    public void setTail(int size, String hex){
+        fTail = new Tail(coords, this.size, size, hex); }
+    public void setEye(int size, String hex){
+        fEye = new Eye(size, hex); }
+    public void setMouth(int size, String hex){
+        fMouth = new Mouth(size, hex); }
 
     public void draw() {
 
         //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
         Drawing.pen().fillOval(coordsX, coordsY, 60 * size, 50 * size);
-        fTail = new Tail();
-        fTail.draw();
         //Drawing.pen().drawLine(100, 100, 800, 800);
     }
 

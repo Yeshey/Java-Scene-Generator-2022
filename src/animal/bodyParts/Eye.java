@@ -5,7 +5,7 @@ import gui.Drawing;
 
 import java.awt.*;
 
-public class Eye extends Fish {
+public class Eye {
 
     private int size;
     private String colorHex;

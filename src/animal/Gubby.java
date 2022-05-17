@@ -10,8 +10,8 @@ public class Gubby extends Fish {
         super(coordsX, coordsY, colorHex, size);
     }
 
-    public void draw() {
-        Drawing.pen().setColor(Color.decode("#7CCC30"));
-        Drawing.pen().fillOval(getCoordsX(),getCoordsY(),30,30);
+    @Override
+    public void buildTail() {
+        setTail(100, "#7CFC00");
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import animal.Anglerfish;
 import animal.Fish;
+import animal.Gubby;
 import environment.Terrain;
 
 import javax.swing.*;
@@ -29,7 +30,7 @@ public class Scene {
 
             int size = RandNum.between(1, 3);
 
-            Fish newRedFish = new Fish(coordsX, coordsY, "#ff0000", size);
+            Gubby newRedFish = new Gubby(coordsX, coordsY, "#ff0000", size);
 
             // before adding new Fish, test whether it intersects any other
             if ( vacantProperty(newRedFish) ){
@@ -39,6 +40,9 @@ public class Scene {
             }
         }
     }
+
+
+
     private boolean vacantProperty(Fish newF) {
         boolean anyIntersection = false;
         for (Fish h : fishArrayList){

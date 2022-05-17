@@ -3,9 +3,11 @@ package animal.bodyParts;
 import animal.Fish;
 import gui.Drawing;
 
-public class Tail extends Fish {
+public class Tail {
 
-    private int size;
+    private Point coordsFish;
+    private int sizeFish;
+    private int sizeTail;
     private String colorHex;
 
     public Tail(int size, String colorHex) {
@@ -13,16 +15,12 @@ public class Tail extends Fish {
         this.colorHex = colorHex;
     }
 
-    public Tail() {
-    }
-
     public void draw() {
-        int xCoords = getCoordsX();
-        int yCoords = getCoordsY();
 
-        int[] polygonX = {xCoords, xCoords - 10, xCoords - 10};
-        int[] polygonY = {yCoords, yCoords + 10, yCoords - 10};
+        int[] polygonX = {coordsFish.x, coordsFish.x-10, coordsFish.x + 10};
+        int[] polygonY = {coordsFish.y, coordsFish.y+10, coordsFish.y - 10};
+
         int polygonN = 3;
-        Drawing.pen().drawPolygon(polygonX, polygonY, polygonN);
+        Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
     }
 }
