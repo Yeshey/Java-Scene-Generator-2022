@@ -5,9 +5,9 @@ import utils.Constants;
 
 import java.awt.*;
 
-public class Gubby extends Fish {
+public class Guppy extends Fish {
 
-    public Gubby(Point coords, String colorHex, double size) {
+    public Guppy(Point coords, String colorHex, double size) {
         super(coords, colorHex, size);
     }
 
@@ -25,6 +25,8 @@ public class Gubby extends Fish {
         Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
     }
 
+
+
     @Override
     public void drawEye(){
         Drawing.pen().setColor(Color.decode("#7EC8E3")); // HEX representation
@@ -35,4 +37,6 @@ public class Gubby extends Fish {
     public void drawMouth(){
         // no mouth
     }
+
+
 }

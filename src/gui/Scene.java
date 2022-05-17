@@ -3,14 +3,12 @@ package gui;
 import java.awt.*;
 import java.util.ArrayList;
 
-import animal.Anglerfish;
 import animal.Fish;
-import animal.Gubby;
+import animal.Guppy;
+import animal.Whale;
 import environment.Terrain;
 import utils.Constants;
 import utils.RandDouble;
-
-import javax.swing.*;
 
 //import drawingTool.Drawing;
 
@@ -32,14 +30,15 @@ public class Scene {
 
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
-            Gubby newRedFish = new Gubby(new Point(coordsX, coordsY), "#ff0000", size);
-
-            // before adding new Fish, test whether it intersects any other
+            Guppy newRedFish = new Guppy(new Point(coordsX, coordsY), "#ff0000", size);
+            Whale newWhale = new Whale(new Point(100, 100), "#00FFFF", size);
+            // TODO test whether it intersects with any other before adding a new Fish
             if ( vacantProperty(newRedFish) ){
                 fishArrayList.add(newRedFish);
             } else {
                 i-=1;
             }
+            fishArrayList.add(newWhale);
         }
     }
 

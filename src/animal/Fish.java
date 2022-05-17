@@ -9,7 +9,7 @@ import utils.*;
 public class Fish implements LocatedRectangle{ // abstract
     private Point coords;
 
-    private String colorHex = "#7CFC00";
+    private String colorHex; /* = "#7CFC00" */
     private double size;
 
     public Fish(Point coords, String colorHex, double size) {
@@ -26,15 +26,20 @@ public class Fish implements LocatedRectangle{ // abstract
     public void drawTail(){ }
     public void drawEye(){ }
     public void drawMouth(){ }
+    public void drawBody() {}
 
     public void draw() {
         drawTail();
+        drawBody();
 
+        /*
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
         Drawing.pen().fillOval((int)(coords.x-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(coords.y-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(Constants.FISH_NORMAL_DIAMETER * size), (int)(Constants.FISH_NORMAL_DIAMETER * size));
 
         drawEye();
         drawMouth();
+
+         */
     }
 
     @Override
