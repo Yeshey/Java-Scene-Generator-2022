@@ -1,6 +1,11 @@
 package animal.bodyParts;
 
-public class Eye {
+import animal.Fish;
+import gui.Drawing;
+
+import java.awt.*;
+
+public class Eye extends Fish {
 
     private int size;
     private String colorHex;
@@ -10,5 +15,8 @@ public class Eye {
         this.colorHex = colorHex;
     }
 
-    public void draw(int size) {}
+
+    public void draw(int size) {
+
+    }
 }

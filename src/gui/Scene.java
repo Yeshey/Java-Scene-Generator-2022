@@ -39,9 +39,8 @@ public class Scene {
     public void drawFishes() {
         for (int i = 0; i < fishArrayList.size(); i++) {
             fishArrayList.get(i).draw();
-        }
 
-       
+        }
     }
 
 

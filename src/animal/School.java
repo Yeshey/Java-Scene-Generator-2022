@@ -1,5 +1,7 @@
 package animal;
 
+import gui.Scene;
+
 public class School {
     private int coordsX;
     private int coordsY;

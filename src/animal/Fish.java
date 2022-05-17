@@ -7,8 +7,6 @@ import gui.Drawing;
 import gui.LocatedRectangle;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
-import java.util.ArrayList;
 
 public class Fish implements LocatedRectangle{ // abstract
 
@@ -21,9 +19,10 @@ public class Fish implements LocatedRectangle{ // abstract
     private Mouth fMouth;
     private Tail fTail;
 
-    // remove all cnstructurs we're not using ------------------
+    // remove all constructors we're not using ------------------
     public Fish() {
     }
+
 
     public Fish(String name, int coordsX, int coordsY, String colorHex, int size) {
         this.name = name;
@@ -46,10 +45,10 @@ public class Fish implements LocatedRectangle{ // abstract
         //coordinates.add();
     }
 
-    public int getCoordX(){
+    public int getCoordsX(){
         return coordsX;
     }
-    public int getCoordY(){
+    public int getCoordsY(){
         return coordsY;
 
     }
@@ -59,6 +58,8 @@ public class Fish implements LocatedRectangle{ // abstract
         //Drawing.pen().setColor(Color.decode("#7CFC00")); // HEX representation
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
         Drawing.pen().fillOval(coordsX, coordsY, 60 * size, 50 * size);
+        fTail = new Tail();
+        fTail.draw();
         //Drawing.pen().drawLine(100, 100, 800, 800);
     }
 

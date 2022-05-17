@@ -8,6 +8,7 @@
 package gui;
 
 import java.awt.Graphics;
+import java.util.Random;
 import javax.swing.JPanel;
 
 public class DrawingArea extends JPanel {
