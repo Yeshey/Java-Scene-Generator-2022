@@ -13,10 +13,10 @@ import javax.swing.JPanel;
 public class DrawingArea extends JPanel {
     private static final long serialVersionUID = 1L;
 
-    private Scene Ocean; //composite
+    private Scene ocean; //composite
 
     public void DrawingArea() {
-        Ocean = new Scene();
+        ocean = new Scene();
     }
 
     protected void paintComponent(Graphics pen) {
@@ -24,9 +24,9 @@ public class DrawingArea extends JPanel {
 
         Drawing.set(pen); // We need this before being able to draw anything
 
-        if (Ocean == null) {
-            Ocean = new Scene();
+        if (ocean == null) {
+            ocean = new Scene();
         }
-        Ocean.draw();
+        ocean.draw();
     }
 }

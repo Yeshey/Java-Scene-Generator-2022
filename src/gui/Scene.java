@@ -11,34 +11,26 @@ import javax.swing.*;
 
 //import drawingTool.Drawing;
 
-public class Scene implements LocatedRectangle {
+public class Scene {
 
-    private JPanel westPanel = new JPanel();
-    private JButton b1 = new JButton("2");
-    private ArrayList<Fish> fishArrayList = new ArrayList<>();
-
-    private Fish fish; // composite
+    private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
     private Terrain terrain; // composite
     private Button guiButton; //composite
 
     public Scene() {
-        guiButton = new Button();
+        //guiButton = new Button();
+        tenRedFishToArray("Joao");
     }
-
-    public static int between(int min, int max) {
-        return (int) (Math.random() * ((max - min) + 1) + min);
-    }
-
 
     public void tenRedFishToArray(String name) {
         for (int i = 0; i < 10; i++) {
-            int coordsX = between(10, 800);
-            int coordsY = between(10, 800);
+            int coordsX = RandNum.between(10, 800);
+            int coordsY = RandNum.between(10, 800);
 
-
-            int size = between(1, 3);
+            int size = RandNum.between(1, 3);
 
             Fish newRedFish = new Fish(name, coordsX, coordsY, "#ff0000", size);
+            //if (newRedFish.intersects())
             fishArrayList.add(newRedFish);
         }
     }
@@ -49,13 +41,11 @@ public class Scene implements LocatedRectangle {
             fishArrayList.get(i).draw();
         }
 
-        address();
-
+       
     }
 
 
     public void draw() {
-        tenRedFishToArray("Joao");
         drawFishes();
 
         /* --------------- random shapes --------------- */ /*
@@ -91,20 +81,4 @@ public class Scene implements LocatedRectangle {
      */ /* --------------- random shapes --------------- */
 
     }
-
-    @Override
-    public Point address() {
-        return null;
-    }
-
-    @Override
-    public int width() {
-        return 0;
-    }
-
-    @Override
-    public int height() {
-        return 0;
-    }
-
 }
