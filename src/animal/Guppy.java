@@ -12,6 +12,12 @@ public class Guppy extends Fish {
     }
 
     @Override
+    public void drawBody(){
+        Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
+        Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()));
+    }
+
+    @Override
     public void drawTail(){
 
         int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER*getFishSize()*Constants.FISH_TAIL_X_SIZE);
@@ -23,12 +29,6 @@ public class Guppy extends Fish {
 
         int polygonN = 3;
         Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
-    }
-
-    @Override
-    public void drawBody(){
-        Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
-        Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()));
     }
 
     @Override

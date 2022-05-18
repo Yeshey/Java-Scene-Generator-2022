@@ -24,7 +24,7 @@ public class Scene {
     }
 
     public void tenRedFishToArray() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             int coordsX = (int) RandDouble.between(10, 800);
             int coordsY = (int) RandDouble.between(10, 800);
 
