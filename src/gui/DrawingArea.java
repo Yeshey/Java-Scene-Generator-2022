@@ -17,7 +17,7 @@ public class DrawingArea extends JPanel {
     private Scene ocean; //composite
 
     public void DrawingArea() {
-        ocean = new Scene();
+        ocean = null;
     }
 
     protected void paintComponent(Graphics pen) {

@@ -1,6 +1,5 @@
 package animal.bodyParts;
 
-import animal.Fish;
 import gui.Drawing;
 import utils.Constants;
 
@@ -22,8 +21,8 @@ public class Tail {
 
     public void draw() {
 
-        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER*fishSize*Constants.FISH_TAIL_X_SIZE);
-        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER*fishSize*Constants.FISH_TAIL_Y_SIZE);
+        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *fishSize*Constants.FISH_TAIL_X_SIZE);
+        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *fishSize*Constants.FISH_TAIL_Y_SIZE);
 
         Drawing.pen().setColor(Color.decode("#7a5230")); // HEX representation
         int[] polygonX = {coordsFish.x, coordsFish.x-tailXSize, coordsFish.x - tailXSize};
