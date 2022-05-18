@@ -25,13 +25,12 @@ public class Whale extends Fish {
     public void drawTail(){
         Point point = new Point(10, 100);
 
-
         int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER*getFishSize()*Constants.FISH_TAIL_X_SIZE);
         int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER*getFishSize()*Constants.FISH_TAIL_Y_SIZE);
 
         Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
-        int[] polygonX = {point.x, point.x-tailXSize, point.x - tailXSize};
-        int[] polygonY = {point.y, point.y+tailYSize/5, point.y - tailYSize/5};
+        int[] polygonX = {getCoords().x, getCoords().x-tailXSize, getCoords().x - tailXSize};
+        int[] polygonY = {getCoords().y, getCoords().y+tailYSize/5, getCoords().y - tailYSize/5};
         //TODO change coordinates
 
         int polygonN = 3;

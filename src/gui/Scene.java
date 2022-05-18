@@ -31,7 +31,7 @@ public class Scene {
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
             Guppy newRedFish = new Guppy(new Point(coordsX, coordsY), "#ff0000", size);
-            Whale newWhale = new Whale(new Point(100, 100), "#00FFFF", size);
+            Whale newWhale = new Whale(new Point(coordsX, coordsY), "#00FFFF", size);
             // TODO test whether it intersects with any other before adding a new Fish
             if ( vacantProperty(newRedFish) ){
                 fishArrayList.add(newRedFish);

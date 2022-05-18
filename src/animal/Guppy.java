@@ -25,7 +25,11 @@ public class Guppy extends Fish {
         Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
     }
 
-
+    @Override
+    public void drawBody(){
+        Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
+        Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER*getFishSize()/2), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()));
+    }
 
     @Override
     public void drawEye(){

@@ -22,6 +22,7 @@ public class Fish implements LocatedRectangle{ // abstract
     // getters
     public Point getCoords(){ return coords; }
     public double getFishSize(){ return this.size; }
+    public String getFishHex() { return colorHex; }
 
     public void drawTail(){ }
     public void drawEye(){ }
@@ -32,14 +33,11 @@ public class Fish implements LocatedRectangle{ // abstract
         drawTail();
         drawBody();
 
-        /*
-        Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
-        Drawing.pen().fillOval((int)(coords.x-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(coords.y-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(Constants.FISH_NORMAL_DIAMETER * size), (int)(Constants.FISH_NORMAL_DIAMETER * size));
-
         drawEye();
         drawMouth();
 
-         */
+
+
     }
 
     @Override
