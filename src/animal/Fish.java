@@ -22,6 +22,7 @@ public class Fish implements LocatedRectangle{ // abstract
     // getters
     public Point getCoords(){ return coords; }
     public double getFishSize(){ return this.size; }
+    public String getFishHex(){ return this.colorHex; }
 
     public void drawTail(){ }
     public void drawEye(){ }
@@ -31,6 +32,9 @@ public class Fish implements LocatedRectangle{ // abstract
     public void draw() {
         drawTail();
         drawBody();
+
+        drawEye();
+        drawMouth();
 
         /*
         Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
