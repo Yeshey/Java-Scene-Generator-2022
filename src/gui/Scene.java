@@ -30,6 +30,7 @@ public class Scene {
             int coordsX = (int) RandDouble.between(10, 800);
             int coordsY = (int) RandDouble.between(10, 800);
 
+            // rand double can be between 0.8 and 1.5
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
             Gubby newRedFish = new Gubby(new Point(coordsX, coordsY), "#ff0000", size);
