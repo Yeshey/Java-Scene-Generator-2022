@@ -1,10 +1,5 @@
 package animal.bodyParts;
 
-import animal.Fish;
-import gui.Drawing;
-
-import java.awt.*;
-
 public class Eye {
 
     private int size;

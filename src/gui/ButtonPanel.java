@@ -17,24 +17,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
     public ButtonPanel() {
         super();
         defineStructure();
-		/*
-		setLayout(new BorderLayout());
-		add(new JTextField("north"), BorderLayout.NORTH);
-		
-		//setLayout(new FlowLayout(FlowLayout.LEFT));
-		setLayout(new GridLayout(2,2,10,8));
-		
-		button1 = new JButton("1");
-		button2 = new JButton("2");
-		button3 = new JButton("3");
-		button4 = new JButton("4");
-		
-		add(new JTextField("north"), BorderLayout.NORTH);
-		add(button1, BorderLayout.CENTER);
-		add(button2, BorderLayout.CENTER);
-		add(button3, BorderLayout.CENTER);
-		add(button4, BorderLayout.CENTER);
-		*/
     }
 
     private void defineStructure() {
@@ -45,23 +27,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
         JPanel jp = new JPanel();
         add(jp);
         jp.setLayout(new GridLayout(2, 2, 12, 12));
-		
-		/*
-		button1 = new JButton("1");
-		button2 = new JButton("2");
-		button3 = new JButton("3");
-		button4 = new JButton("4");
-		
-		//add(new JTextField("north"), BorderLayout.NORTH);
-		jp.add(button1, BorderLayout.CENTER);
-		jp.add(button2, BorderLayout.CENTER);
-		jp.add(button3, BorderLayout.CENTER);
-		jp.add(button4, BorderLayout.CENTER);
-		button1.addActionListener(this);
-		button2.addActionListener(this);
-		button3.addActionListener(this);
-		button4.addActionListener(this);
-		*/
 
         button1 = defineButton("1", jp);
         button2 = defineButton("2", jp);
@@ -83,46 +48,21 @@ public class ButtonPanel extends JPanel implements ActionListener {
             System.out.println("button 1 has been pushed");
             text.setText("button 1 has been pushed");
             reactToBushedButton(button1);
-			/*
-			if (nextButton == button1) {
-				nextInstructionToUser();
-			} else {
-				text.setText("GAME OVER");
-			}
-			*/
+
         } else if (e.getSource() == button2) {
             System.out.println("nutton 2 has been pushed");
             text.setText("button 2 has been pushed");
             reactToBushedButton(button2);
-			/*
-			if (nextButton == button2) {
-				nextInstructionToUser();
-			} else {
-				text.setText("GAME OVER");
-			}
-			*/
+
         } else if (e.getSource() == button3) {
             System.out.println("nutton 3 has been pushed");
             text.setText("button 3 has been pushed");
             reactToBushedButton(button3);
-			/*
-			if (nextButton == button3) {
-				nextInstructionToUser();
-			} else {
-				text.setText("GAME OVER");
-			}
-			*/
+
         } else if (e.getSource() == button4) {
             System.out.println("nutton 4 has been pushed");
             text.setText("button 4 has been pushed");
             reactToBushedButton(button4);
-			/*
-			if (nextButton == button4) {
-				nextInstructionToUser();
-			} else {
-				text.setText("GAME OVER");
-			}
-			*/
         }
     }
 

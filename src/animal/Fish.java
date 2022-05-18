@@ -31,18 +31,8 @@ public class Fish implements LocatedRectangle{ // abstract
     public void draw() {
         drawTail();
         drawBody();
-
         drawEye();
         drawMouth();
-
-        /*
-        Drawing.pen().setColor(Color.decode(colorHex)); // HEX representation
-        Drawing.pen().fillOval((int)(coords.x-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(coords.y-Constants.FISH_NORMAL_DIAMETER*size/2), (int)(Constants.FISH_NORMAL_DIAMETER * size), (int)(Constants.FISH_NORMAL_DIAMETER * size));
-
-        drawEye();
-        drawMouth();
-
-         */
     }
 
     @Override

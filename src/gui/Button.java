@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Button extends JPanel implements ActionListener{
+public class Button extends JPanel implements ActionListener {
     private JButton fishesButton;
     private JButton terrainButton;
     private JButton lightingButton;
     private JPanel westPanel;
 
-    public Button(){
+    public Button() {
         fishesButton = new JButton("Fishes");
         fishesButton.setToolTipText("Make fishes appear");
 
@@ -24,8 +24,6 @@ public class Button extends JPanel implements ActionListener{
 
         westPanel = new JPanel();
 
-        //setLayout(new BorderLayout());
-        //setLayout(new GridLayout(12,1,15,20));
         setLayout(new FlowLayout());
 
         addToScene();
@@ -33,7 +31,7 @@ public class Button extends JPanel implements ActionListener{
         add(westPanel, BorderLayout.WEST);
     }
 
-    public void addToScene(){
+    public void addToScene() {
         westPanel.add(fishesButton, BorderLayout.SOUTH);
         westPanel.add(terrainButton, BorderLayout.SOUTH);
         westPanel.add(lightingButton, BorderLayout.SOUTH);
@@ -49,7 +47,7 @@ public class Button extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("ActionPerformed " + (((JButton)/*This is a cast*/(e.getSource())).getText()));
-        if ( (((JButton)(e.getSource())).getText().equals("Fishes")) ) {
+        if ((((JButton) (e.getSource())).getText().equals("Fishes"))) {
             System.out.println("A button with he number 1 on it has been pushed");
         }
         //if (b1)

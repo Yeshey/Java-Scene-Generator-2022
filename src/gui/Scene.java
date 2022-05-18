@@ -23,27 +23,38 @@ public class Scene extends JFrame {
 
     public Scene() {
         //guiButton = new Button();
-        tenRedFishToArray();
+        newFishToArray();
     }
 
+    public Point generateCoordinates() {
+        int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
+        int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight());
+        Point point = new Point(coordsX, coordsY);
 
-    public void tenRedFishToArray() {
-        for (int i = 0; i < 10; i++) {
-            int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
-            int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight());
+        return point;
+    }
+
+    public void newFishToArray() {
+        for (int i = 0; i < 10; i+= 2) {
 
             // rand double can be between 0.8 and 1.5
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
-            Guppy newRedFish = new Guppy(new Point(coordsX, coordsY), "#ff0000", size);
-            Whale newWhale = new Whale(new Point(coordsX, coordsY), "#00FFFF", size);
-            // TODO test whether it intersects with any other before adding a new Fish
+            Guppy newGuppy = new Guppy(generateCoordinates(), "#ff0000", size);
+            Whale newWhale = new Whale(generateCoordinates(), "#00FFFF", size);
+
             if (vacantProperty(newWhale)) {
                 fishArrayList.add(newWhale);
             } else {
                 i -= 1;
             }
-            //fishArrayList.add(newWhale);
+
+
+            if (vacantProperty(newGuppy)) {
+                fishArrayList.add(newGuppy);
+            } else {
+                i -= 1;
+            }
         }
     }
 
@@ -67,38 +78,5 @@ public class Scene extends JFrame {
 
     public void draw() {
         drawFishes();
-
-        /* --------------- random shapes --------------- */ /*
-        String color = "#ffff00";
-
-        Drawing.pen().setColor(Color.decode(color)); // a color constant
-        Drawing.pen().fillRect(10, 10, 200, 300);
-
-        Drawing.pen().setColor(Color.decode("#7a5230")); // HEX representation
-        Drawing.pen().fillOval(300, 234, 800, 100);
-
-        Drawing.pen().setColor(new Color(255, 100, 100)); // RGB representation
-        Drawing.pen().drawString("Hello World", 666, 280);
-
-        // Draw the triangle
-        int[] polygonX = {10, 60, 30};
-        int[] polygonY = {10, 10, 60};
-        int polygonN = 3;
-        Drawing.pen().drawPolygon(polygonX, polygonY, polygonN);
-        Drawing.pen().drawLine(100, 200, 800, 800);
-
-        Fish funny = new Fish(400, 260);
-        funny.draw();
-
-        ArrayList<Anglerfish> fishGroup = new ArrayList<Anglerfish>();
-        for (int i = 0; i < 5; i++) {
-            fishGroup.add(new Anglerfish(300 + 100 * i, 260));
-        }
-        //lanternFish myLanternFish = new lanternFish(300, 260);
-        for (Anglerfish f : fishGroup) {
-            f.draw();
-        }
-     */ /* --------------- random shapes --------------- */
-
     }
 }

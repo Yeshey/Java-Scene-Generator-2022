@@ -11,18 +11,6 @@ public class Whale extends Fish {
         super(coords, colorHex, size);
     }
 
-    /*
-    @Override
-    public void drawBody() {
-        double size = getFishSize();
-
-        Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation
-        Drawing.pen().fillOval((getCoords().x), (getCoords().y), (int)(Constants.FISH_NORMAL_DIAMETER_X * size), (int)(Constants.FISH_NORMAL_DIAMETER_X * size/2));
-        //TODO change coordinates
-    }
-
-     */
-
     @Override
     public void drawBody(){
         Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation

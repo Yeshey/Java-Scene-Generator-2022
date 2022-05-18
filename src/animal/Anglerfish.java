@@ -3,8 +3,7 @@ package animal;
 import gui.Drawing;
 import java.awt.*;
 
-// public class lanternFish extends Fish{
-public class Anglerfish extends Fish { // extends Fish
+public class Anglerfish extends Fish {
 
 	public Anglerfish(Point coords, String colorHex, int size) {
         super(coords, colorHex, size);
