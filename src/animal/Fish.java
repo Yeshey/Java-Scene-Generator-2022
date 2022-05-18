@@ -1,6 +1,5 @@
 package animal;
 
-import gui.Drawing;
 import gui.LocatedRectangle;
 
 import java.awt.*;
@@ -54,12 +53,12 @@ public class Fish implements LocatedRectangle{ // abstract
 
     @Override
     public int width() {
-        return (int) (Constants.FISH_NORMAL_DIAMETER*size) + ((int)(Constants.FISH_NORMAL_DIAMETER*this.size*Constants.FISH_TAIL_X_SIZE) - (int)(Constants.FISH_NORMAL_DIAMETER*this.size/2));
+        return (int) (Constants.FISH_NORMAL_DIAMETER_X *size) + ((int)(Constants.FISH_NORMAL_DIAMETER_X *this.size*Constants.FISH_TAIL_X_SIZE) - (int)(Constants.FISH_NORMAL_DIAMETER_X *this.size/2));
     }
 
     @Override
     public int height() {
-        return (int) (Constants.FISH_NORMAL_DIAMETER*size);
+        return (int) (Constants.FISH_NORMAL_DIAMETER_Y *size);
     }
 
 }

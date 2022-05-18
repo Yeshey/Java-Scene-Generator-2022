@@ -11,27 +11,36 @@ public class Whale extends Fish {
         super(coords, colorHex, size);
     }
 
+    /*
     @Override
     public void drawBody() {
-        Point point = new Point(100, 100);
         double size = getFishSize();
 
         Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation
-        Drawing.pen().fillOval((point.x), (point.y), (int)(Constants.FISH_NORMAL_DIAMETER * size), (int)(Constants.FISH_NORMAL_DIAMETER * size/2));
+        Drawing.pen().fillOval((getCoords().x), (getCoords().y), (int)(Constants.FISH_NORMAL_DIAMETER_X * size), (int)(Constants.FISH_NORMAL_DIAMETER_X * size/2));
         //TODO change coordinates
+    }
+
+     */
+
+    @Override
+    public void drawBody(){
+        Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
+        Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/2),
+                (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_Y *getFishSize()/2),
+                (int)(Constants.FISH_NORMAL_DIAMETER_X*2 * getFishSize()),
+                (int)(Constants.FISH_NORMAL_DIAMETER_Y * getFishSize()));
     }
 
     @Override
     public void drawTail(){
-        Point point = new Point(10, 100);
 
-        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER*getFishSize()*Constants.FISH_TAIL_X_SIZE);
-        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER*getFishSize()*Constants.FISH_TAIL_Y_SIZE);
+        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE);
+        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_Y_SIZE);
 
         Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
         int[] polygonX = {getCoords().x, getCoords().x-tailXSize, getCoords().x - tailXSize};
         int[] polygonY = {getCoords().y, getCoords().y+tailYSize/5, getCoords().y - tailYSize/5};
-        //TODO change coordinates
 
         int polygonN = 3;
         Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
@@ -40,6 +49,6 @@ public class Whale extends Fish {
     @Override
     public void drawEye(){
         Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
-        Drawing.pen().fillOval((int)(getCoords().x+Constants.FISH_NORMAL_DIAMETER*getFishSize()/5), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER*getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER * getFishSize()/4));
+        Drawing.pen().fillOval((int)(getCoords().x+Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/5), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4));
     }
 }
