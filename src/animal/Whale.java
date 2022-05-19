@@ -21,7 +21,7 @@ public class Whale extends Fish {
     }
 
     @Override
-    public void drawTail(){
+    protected void drawTail(){
 
         int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE);
         int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_Y_SIZE);
@@ -39,4 +39,10 @@ public class Whale extends Fish {
         Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
         Drawing.pen().fillOval((int)(getCoords().x+Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/5), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4));
     }
+
+	@Override
+	protected void drawMouth() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -13,4 +13,29 @@ public class Anglerfish extends Fish {
 		Drawing.pen().drawLine(100, 100, 800, 800);
 		Drawing.pen().fillOval(getCoords().x, getCoords().y, 60, 50);
 	}
+
+	@Override
+	protected void drawTail() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void drawEye() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void drawMouth() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void drawBody() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

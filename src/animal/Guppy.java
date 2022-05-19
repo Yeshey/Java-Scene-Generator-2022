@@ -18,7 +18,7 @@ public class Guppy extends Fish {
     }
 
     @Override
-    public void drawTail(){
+    protected void drawTail(){
 
         int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE);
         int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_Y_SIZE);

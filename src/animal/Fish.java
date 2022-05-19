@@ -5,7 +5,7 @@ import gui.LocatedRectangle;
 import java.awt.*;
 import utils.*;
 
-public class Fish implements LocatedRectangle{ // abstract
+public abstract class Fish implements LocatedRectangle{ // abstract
     private Point coords;
 
     private String colorHex; /* = "#7CFC00" */
@@ -23,10 +23,10 @@ public class Fish implements LocatedRectangle{ // abstract
     public double getFishSize(){ return this.size; }
     public String getFishHex(){ return this.colorHex; }
 
-    public void drawTail(){ }
-    public void drawEye(){ }
-    public void drawMouth(){ }
-    public void drawBody() {}
+    protected abstract void drawTail();
+    protected abstract void drawEye();
+    protected abstract void drawMouth();
+    protected abstract void drawBody();
 
     public void draw() {
         drawTail();
