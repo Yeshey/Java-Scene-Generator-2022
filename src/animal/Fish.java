@@ -13,12 +13,11 @@ public abstract class Fish implements LocatedRectangle{ // abstract
 
     public Fish(Point coords, String colorHex, double size) {
         this.coords = coords;
-
         this.colorHex = colorHex;
         this.size = size;
     }
 
-    // getters
+
     public Point getCoords(){ return coords; }
     public double getFishSize(){ return this.size; }
     public String getFishHex(){ return this.colorHex; }

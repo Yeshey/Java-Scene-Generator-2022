@@ -16,17 +16,17 @@ public class Whale extends Fish {
         Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
         Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/2),
                 (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_Y *getFishSize()/2),
-                (int)(Constants.FISH_NORMAL_DIAMETER_X*2 * getFishSize()),
-                (int)(Constants.FISH_NORMAL_DIAMETER_Y * getFishSize()));
+                (int)(Constants.FISH_NORMAL_DIAMETER_X*2 * getFishSize()+2),
+                (int)(Constants.FISH_NORMAL_DIAMETER_Y * getFishSize())+2);
     }
 
     @Override
     protected void drawTail(){
 
-        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE);
-        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_Y_SIZE);
+        int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE+30);
+        int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_Y_SIZE+30);
 
-        Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
+        Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation for Aqua blue
         int[] polygonX = {getCoords().x, getCoords().x-tailXSize, getCoords().x - tailXSize};
         int[] polygonY = {getCoords().y, getCoords().y+tailYSize/5, getCoords().y - tailYSize/5};
 
@@ -36,8 +36,8 @@ public class Whale extends Fish {
 
     @Override
     public void drawEye(){
-        Drawing.pen().setColor(Color.decode("#00FFFF")); // HEX representation for Aqua blue
-        Drawing.pen().fillOval((int)(getCoords().x+Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/5), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4));
+        Drawing.pen().setColor(Color.decode("#000000")); // HEX representation for Aqua blue
+        Drawing.pen().fillOval((int)(getCoords().x+50+Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/6), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4));
     }
 
 	@Override

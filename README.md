@@ -2,3 +2,5 @@
 
 - composite; part of the parent object (Ex: leg of a table)
 - aggregate: everything else
+
+- Singleton pattern will be applied

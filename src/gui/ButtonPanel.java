@@ -13,7 +13,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
     private JButton button4;
     private JButton nextButton;
 
-
     public ButtonPanel() {
         super();
         defineStructure();
@@ -44,7 +43,10 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        Scene scene = new Scene();
         if (e.getSource() == button1) {
+            scene.newFishToArray();
+            scene.draw();
             System.out.println("button 1 has been pushed");
             text.setText("button 1 has been pushed");
             reactToBushedButton(button1);

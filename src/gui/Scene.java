@@ -35,20 +35,25 @@ public class Scene extends JFrame {
     }
 
     public void newFishToArray() {
-        for (int i = 0; i < 10; i+= 2) {
+        if (!fishArrayList.isEmpty()) {
+            for (int i = 0; i < fishArrayList.size(); i++) {
+                fishArrayList.remove(i);
+            }
+        }
+
+        for (int i = 0; i < 10; i += 2) {
 
             // rand double can be between 0.8 and 1.5
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
             Guppy newGuppy = new Guppy(generateCoordinates(), "#ff0000", size);
-            Whale newWhale = new Whale(generateCoordinates(), "#00FFFF", size);
+            Whale newWhale = new Whale(generateCoordinates(), "#2F387B", size);
 
             if (vacantProperty(newWhale)) {
                 fishArrayList.add(newWhale);
             } else {
                 i -= 1;
             }
-
 
             if (vacantProperty(newGuppy)) {
                 fishArrayList.add(newGuppy);
@@ -71,7 +76,6 @@ public class Scene extends JFrame {
     public void drawFishes() {
         for (int i = 0; i < fishArrayList.size(); i++) {
             fishArrayList.get(i).draw();
-
         }
     }
 
