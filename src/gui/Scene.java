@@ -18,7 +18,6 @@ public class Scene extends JFrame {
 
     private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
     private Terrain terrain; // composite
-    private Button guiButton; //composite
     private JFrame jFrame = new JFrame();
 
     public Scene() {
@@ -41,7 +40,7 @@ public class Scene extends JFrame {
             }
         }
 
-        for (int i = 0; i < 10; i += 2) {
+        for (int i = 0; i < 15; i += 2) {
 
             // rand double can be between 0.8 and 1.5
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
@@ -72,13 +71,11 @@ public class Scene extends JFrame {
         return !anyIntersection;
     }
 
-
     public void drawFishes() {
         for (int i = 0; i < fishArrayList.size(); i++) {
             fishArrayList.get(i).draw();
         }
     }
-
 
     public void draw() {
         drawFishes();

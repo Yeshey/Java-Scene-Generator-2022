@@ -8,41 +8,62 @@ package gui;
 
 import java.awt.Dimension;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-import javax.swing.JButton;
-
-
-public class WindowGenerator extends JFrame{
-    private JFrame applicationFrame;
-    private ButtonPanel bp;
+public class WindowGenerator extends JFrame implements ActionListener {
+    private DrawingArea drawing;
+    private Button button = new Button();
 
     public WindowGenerator(String title) {
-        applicationFrame = new JFrame(title);
-		
-		setLayout(new BorderLayout());
-		Dimension screenSize = applicationFrame.getToolkit().getScreenSize();
-		applicationFrame.setBounds(0,0,screenSize.width, screenSize.height);
-        applicationFrame.setBounds(0, 0, screenSize.width, screenSize.height);
-        applicationFrame.setVisible(true);
+        super(title);
 
-        applicationFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        constructButtonMenu();
+        constructDrawingArea();
+
+        Dimension screenSize = getToolkit().getScreenSize();
+        setBounds(0, 0, screenSize.width, screenSize.height);
+
+        setVisible(true);
+
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    private void constructButtonMenu() {
+        button.addButtonsToAPanel(this);
+        button.addActionListener(this);
     }
 
-    public void setStructure(){
-		bp = new ButtonPanel();
-		applicationFrame.add(bp, BorderLayout.WEST);
+    private void constructDrawingArea() {
+        drawing = new DrawingArea();
+        add(drawing, BorderLayout.CENTER);
     }
 
-    public void addACanvas(JPanel p) {
-        applicationFrame.add(p, BorderLayout.CENTER);
+    public void tidyUpDrawingArea() {
+        drawing.removeAll();
+        drawing.revalidate();
+        drawing.repaint();
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == button.getFishesButton()) {
+            //tidyUpDrawingArea();
+            System.out.println("Get fish attempt");
+        } else if (e.getSource() == button.getTerrainButton()) {
+            //tidyUpDrawingArea();
+            System.out.println("Get terrain attmept");
+        } else if (e.getSource() == button.getResetButton()) {
+            tidyUpDrawingArea();
+            System.out.println("Cleanup tried");
+        }
     }
 
     public static void main(String[] args) {
     	WindowGenerator anApplication = new WindowGenerator("Window Title"); // Create a window
-        anApplication.setStructure();
-        anApplication.addACanvas(new DrawingArea()); // Incert a Drawing area into the window
-    }
+     }
 }

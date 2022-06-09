@@ -8,7 +8,6 @@
 package gui;
 
 import java.awt.Graphics;
-import java.util.Random;
 import javax.swing.JPanel;
 
 public class DrawingArea extends JPanel {
@@ -22,12 +21,16 @@ public class DrawingArea extends JPanel {
 
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
-
+        ocean = null;
         Drawing.set(pen); // We need this before being able to draw anything
 
         if (ocean == null) {
             ocean = new Scene();
         }
         ocean.draw();
+    }
+
+    public Scene getOcean() {
+        return ocean;
     }
 }

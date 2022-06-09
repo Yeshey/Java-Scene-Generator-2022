@@ -9,10 +9,6 @@ public class Anglerfish extends Fish {
         super(coords, colorHex, size);
 	}
 
-	public void draw() {
-		Drawing.pen().drawLine(100, 100, 800, 800);
-		Drawing.pen().fillOval(getCoords().x, getCoords().y, 60, 50);
-	}
 
 	@Override
 	protected void drawTail() {
