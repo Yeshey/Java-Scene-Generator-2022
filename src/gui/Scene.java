@@ -22,7 +22,7 @@ public class Scene extends JFrame {
 
     public Scene() {
         //guiButton = new Button();
-        terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight());
+        terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
     }
 
