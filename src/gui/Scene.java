@@ -46,7 +46,7 @@ public class Scene extends JFrame {
     }
 
     public void setRandomColor() {
-        String[] colors = {"#5D3FD3", "#00A36C", "#088F8F"};
+        String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
         //System.out.println(fishArrayList.get(1).getFishHex());
 
         for (Fish fish : fishArrayList) {
@@ -107,5 +107,9 @@ public class Scene extends JFrame {
     public void draw() {
         drawFishes();
         terrain.draw();
+    }
+
+    public void resetTerrain(){
+        terrain.newSeed();
     }
 }
