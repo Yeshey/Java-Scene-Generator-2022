@@ -28,6 +28,10 @@ public class Terrain extends JFrame {
         return min + (max - min) * r.nextDouble();
     }
 
+    public void newSeed(){
+        this.seed = (int)RandDouble.between(0,1000);
+    }
+
     public void draw() {
         r.setSeed(seed);
         Drawing.pen().setColor(Color.decode(this.colorHex)); // HEX representation
