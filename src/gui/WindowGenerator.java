@@ -52,8 +52,8 @@ public class WindowGenerator extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button.getFishesButton()) {
-
-            //tidyUpDrawingArea();
+            drawing.getOcean().newFishToArray();
+            tidyUpDrawingArea();
             System.out.println("Get fish attempt");
         } else if (e.getSource() == button.getTerrainButton()) {
             drawing.getOcean().resetTerrain();
