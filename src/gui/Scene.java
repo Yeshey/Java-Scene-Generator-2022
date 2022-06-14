@@ -9,6 +9,7 @@ import animal.Whale;
 import environment.Terrain;
 import utils.Constants;
 import utils.RandDouble;
+import utils.RandInt;
 
 import javax.swing.*;
 
@@ -34,23 +35,13 @@ public class Scene extends JFrame {
         return point;
     }
 
-    public void onlyGuppy() {
-
-    }
-
-    public void onlyWhale() {
-
-        for (Fish fish : fishArrayList) {
-
-        }
-    }
 
     public void setRandomColor() {
         String[] colors = {"#5D3FD3", "#00A36C", "#088F8F"};
         //System.out.println(fishArrayList.get(1).getFishHex());
 
         for (Fish fish : fishArrayList) {
-            fish.setColorHex(colors[(int) RandDouble.between(0, 2)]);
+            fish.setColorHex(colors[(int) RandInt.between(0, 2)]);
         }
 
         //System.out.println(fishArrayList.get(1).getFishHex());
@@ -84,6 +75,7 @@ public class Scene extends JFrame {
                 fishArrayList.add(newGuppy);
             } else {
                 System.out.println("Fish overlap");
+
                 i -= 1;
             }
         }
