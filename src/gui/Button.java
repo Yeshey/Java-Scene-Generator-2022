@@ -11,12 +11,14 @@ import java.awt.event.*;
 public class Button {
     private JButton fishesButton = new JButton("Fish");
     private JButton terrainButton = new JButton("Terrain");
-    private JButton reset = new JButton("Reset");
+    private JButton resetButton = new JButton("Reset");
+    private JButton randomColorButton = new JButton("Random color");
 
     public void addActionListener(ActionListener listener) {
         fishesButton.addActionListener(listener);
         terrainButton.addActionListener(listener);
-        reset.addActionListener(listener);
+        resetButton.addActionListener(listener);
+        randomColorButton.addActionListener(listener);
     }
 
     public void addButtonsToAPanel(JFrame frame) {
@@ -25,7 +27,8 @@ public class Button {
 
         menu.add(fishesButton);
         menu.add(terrainButton);
-        menu.add(reset);
+        menu.add(resetButton);
+        menu.add(randomColorButton);
 
         menu.setBorder(BorderFactory.createRaisedBevelBorder());
         frame.add(menu, BorderLayout.WEST);
@@ -40,6 +43,10 @@ public class Button {
     }
 
     public JButton getResetButton() {
-        return reset;
+        return resetButton;
+    }
+
+    public JButton getRandomColorButton() {
+        return randomColorButton;
     }
 }

@@ -8,7 +8,7 @@ import utils.*;
 public abstract class Fish implements LocatedRectangle{ // abstract
     private Point coords;
 
-    private String colorHex; /* = "#7CFC00" */
+    private String colorHex;
     private double size;
 
     public Fish(Point coords, String colorHex, double size) {
@@ -17,6 +17,9 @@ public abstract class Fish implements LocatedRectangle{ // abstract
         this.size = size;
     }
 
+    public void setColorHex(String colorHex) {
+        this.colorHex = colorHex;
+    }
 
     public Point getCoords(){ return coords; }
     public double getFishSize(){ return this.size; }

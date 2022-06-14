@@ -7,7 +7,7 @@
 
 package gui;
 
-import java.awt.Graphics;
+import java.awt.*;
 import javax.swing.JPanel;
 
 public class DrawingArea extends JPanel {
@@ -19,9 +19,13 @@ public class DrawingArea extends JPanel {
         ocean = null;
     }
 
+    public void newScene(){
+        ocean = null;
+    }
+
     protected void paintComponent(Graphics pen) {
         super.paintComponent(pen);
-        ocean = null;
+
         Drawing.set(pen); // We need this before being able to draw anything
 
         if (ocean == null) {

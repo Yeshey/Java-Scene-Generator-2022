@@ -6,8 +6,7 @@
  */
 package gui;
 
-import java.awt.Dimension;
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +15,7 @@ import javax.swing.JFrame;
 public class WindowGenerator extends JFrame implements ActionListener {
     private DrawingArea drawing;
     private Button button = new Button();
+    private Scene scene = new Scene();
 
     public WindowGenerator(String title) {
         super(title);
@@ -29,6 +29,7 @@ public class WindowGenerator extends JFrame implements ActionListener {
         setBounds(0, 0, screenSize.width, screenSize.height);
 
         setVisible(true);
+        drawing.setBackground(Color.decode("#0096FF"));
 
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -58,8 +59,13 @@ public class WindowGenerator extends JFrame implements ActionListener {
             //tidyUpDrawingArea();
             System.out.println("Get terrain attmept");
         } else if (e.getSource() == button.getResetButton()) {
+            drawing.newScene();
             tidyUpDrawingArea();
             System.out.println("Cleanup tried");
+        } else if (e.getSource() == button.getRandomColorButton()) {
+            scene.setRandomColor();
+            tidyUpDrawingArea();
+            System.out.println("Color change tried");
         }
     }
 

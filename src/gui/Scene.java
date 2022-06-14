@@ -21,7 +21,6 @@ public class Scene extends JFrame {
     private JFrame jFrame = new JFrame();
 
     public Scene() {
-        //guiButton = new Button();
         newFishToArray();
     }
 
@@ -32,6 +31,28 @@ public class Scene extends JFrame {
 
         return point;
     }
+
+    public void removeWhales() {
+
+    }
+
+    public void removeGuppy() {
+        for (Fish fish : fishArrayList) {
+
+        }
+    }
+
+    public void setRandomColor() {
+        String[] colors = {"#5D3FD3", "#00A36C", "#088F8F"};
+        //System.out.println(fishArrayList.get(1).getFishHex());
+
+        for (Fish fish : fishArrayList) {
+            fish.setColorHex(colors[(int) RandDouble.between(0, 2)]);
+        }
+
+        //System.out.println(fishArrayList.get(1).getFishHex());
+    }
+
 
     public void newFishToArray() {
         if (!fishArrayList.isEmpty()) {
@@ -76,6 +97,7 @@ public class Scene extends JFrame {
             fishArrayList.get(i).draw();
         }
     }
+
 
     public void draw() {
         drawFishes();
