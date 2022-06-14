@@ -22,12 +22,13 @@ public class Scene extends JFrame {
 
     public Scene() {
         //guiButton = new Button();
+        terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight());
         newFishToArray();
     }
 
     public Point generateCoordinates() {
         int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
-        int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight());
+        int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight()-(Constants.TERRAIN_MAX_HEIGH+50));
         Point point = new Point(coordsX, coordsY);
 
         return point;
@@ -79,5 +80,6 @@ public class Scene extends JFrame {
 
     public void draw() {
         drawFishes();
+        terrain.draw();
     }
 }

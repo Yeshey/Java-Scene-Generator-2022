@@ -3,7 +3,8 @@ package animal;
 import gui.Drawing;
 import utils.Constants;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Point;
 
 public class Guppy extends Fish {
 
