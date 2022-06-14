@@ -52,5 +52,4 @@ public abstract class Fish implements LocatedRectangle{ // abstract
     public int height() {
         return (int) (Constants.FISH_NORMAL_DIAMETER_Y *size);
     }
-
 }

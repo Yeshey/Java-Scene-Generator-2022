@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 public class WindowGenerator extends JFrame implements ActionListener {
     private DrawingArea drawing;
     private Button button = new Button();
-    private Scene scene = new Scene();
 
     public WindowGenerator(String title) {
         super(title);
@@ -53,6 +52,7 @@ public class WindowGenerator extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button.getFishesButton()) {
+
             //tidyUpDrawingArea();
             System.out.println("Get fish attempt");
         } else if (e.getSource() == button.getTerrainButton()) {
@@ -63,10 +63,11 @@ public class WindowGenerator extends JFrame implements ActionListener {
             tidyUpDrawingArea();
             System.out.println("Cleanup tried");
         } else if (e.getSource() == button.getRandomColorButton()) {
-            scene.setRandomColor();
-            tidyUpDrawingArea();
+            drawing.getOcean().setRandomColor();
+            repaint();
             System.out.println("Color change tried");
         }
+
     }
 
     public static void main(String[] args) {

@@ -34,11 +34,12 @@ public class Scene extends JFrame {
         return point;
     }
 
-    public void removeWhales() {
+    public void onlyGuppy() {
 
     }
 
-    public void removeGuppy() {
+    public void onlyWhale() {
+
         for (Fish fish : fishArrayList) {
 
         }
@@ -74,12 +75,15 @@ public class Scene extends JFrame {
             if (vacantProperty(newWhale)) {
                 fishArrayList.add(newWhale);
             } else {
+                System.out.println("Whale overlap");
+
                 i -= 1;
             }
 
             if (vacantProperty(newGuppy)) {
                 fishArrayList.add(newGuppy);
             } else {
+                System.out.println("Fish overlap");
                 i -= 1;
             }
         }
