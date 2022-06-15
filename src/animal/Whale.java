@@ -12,7 +12,7 @@ public class Whale extends Fish {
     }
 
     @Override
-    public void drawBody(){
+    protected void drawBody(){
         Drawing.pen().setColor(Color.decode(getFishHex())); // HEX representation
         Drawing.pen().fillOval((int)(getCoords().x-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/2),
                 (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_Y *getFishSize()/2),
@@ -35,7 +35,7 @@ public class Whale extends Fish {
     }
 
     @Override
-    public void drawEye(){
+    protected void drawEye(){
         Drawing.pen().setColor(Color.decode("#000000")); // HEX representation for Aqua blue
         Drawing.pen().fillOval((int)(getCoords().x+50+Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/6), (int)(getCoords().y-Constants.FISH_NORMAL_DIAMETER_X *getFishSize()/3.9), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4), (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize()/4));
     }

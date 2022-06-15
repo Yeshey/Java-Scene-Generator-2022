@@ -18,14 +18,12 @@ public class Anglerfish extends Fish {
 
 	@Override
 	protected void drawEye() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void drawMouth() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

@@ -14,19 +14,17 @@ public class Shark extends Fish {
     	
     }
 
-	@Override
-	protected void drawEye() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    protected void drawEye() {
 
-	@Override
-	protected void drawMouth() {
-		// TODO Auto-generated method stub
-		
-	}
+    }
 
-	@Override
+    @Override
+    protected void drawMouth() {
+
+    }
+
+    @Override
 	protected void drawBody() {
 		// TODO Auto-generated method stub
 	
