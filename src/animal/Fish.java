@@ -7,7 +7,6 @@ import utils.*;
 
 public abstract class Fish implements LocatedRectangle{ // abstract
     private Point coords;
-
     private String colorHex;
     private double size;
 

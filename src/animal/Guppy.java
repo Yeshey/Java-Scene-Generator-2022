@@ -41,6 +41,4 @@ public class Guppy extends Fish {
     public void drawMouth(){
         // no mouth
     }
-
-
 }

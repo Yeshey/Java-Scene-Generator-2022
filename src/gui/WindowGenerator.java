@@ -68,7 +68,6 @@ public class WindowGenerator extends JFrame implements ActionListener {
             repaint();
             System.out.println("Color change tried");
         }
-
     }
 
     public static void main(String[] args) {

@@ -13,8 +13,6 @@ import utils.RandInt;
 
 import javax.swing.*;
 
-//import drawingTool.Drawing;
-
 public class Scene extends JFrame {
 
     private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
@@ -22,7 +20,6 @@ public class Scene extends JFrame {
     private JFrame jFrame = new JFrame();
 
     public Scene() {
-        //guiButton = new Button();
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
     }
@@ -35,20 +32,17 @@ public class Scene extends JFrame {
         return point;
     }
 
-
     public void setRandomColor() {
         String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
-        //System.out.println(fishArrayList.get(1).getFishHex());
 
         for (Fish fish : fishArrayList) {
             fish.setColorHex(colors[(int) RandInt.between(0, 2)]);
         }
-
-        //System.out.println(fishArrayList.get(1).getFishHex());
     }
 
 
     public void newFishToArray() {
+        //TODO Check if necessary
         if (!fishArrayList.isEmpty()) {
             for (int i = 0; i < fishArrayList.size(); i++) {
                 fishArrayList.remove(i);
@@ -56,8 +50,6 @@ public class Scene extends JFrame {
         }
 
         for (int i = 0; i < 15; i += 2) {
-
-            // rand double can be between 0.8 and 1.5
             double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
 
             Guppy newGuppy = new Guppy(generateCoordinates(), "#ff0000", size);

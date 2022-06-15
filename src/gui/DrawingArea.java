@@ -31,7 +31,6 @@ public class DrawingArea extends JPanel {
         if (ocean == null) {
             ocean = new Scene();
         }
-
         ocean.draw();
     }
 
