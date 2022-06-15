@@ -3,7 +3,6 @@ package animal;
 import gui.LocatedRectangle;
 
 import java.awt.*;
-import utils.*;
 
 public abstract class Fish implements LocatedRectangle{ // abstract
     private Point coords;
@@ -35,21 +34,5 @@ public abstract class Fish implements LocatedRectangle{ // abstract
         drawBody();
         drawEye();
         drawMouth();
-    }
-
-    @Override
-    public Point address() {
-        Point myPoint = new Point(coords.x,coords.y);
-        return myPoint;
-    }
-
-    @Override
-    public int width() {
-        return (int) (Constants.FISH_NORMAL_DIAMETER_X *size) + ((int)(Constants.FISH_NORMAL_DIAMETER_X *this.size*Constants.FISH_TAIL_X_SIZE) - (int)(Constants.FISH_NORMAL_DIAMETER_X *this.size/2));
-    }
-
-    @Override
-    public int height() {
-        return (int) (Constants.FISH_NORMAL_DIAMETER_Y *size);
     }
 }

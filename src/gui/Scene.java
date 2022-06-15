@@ -22,7 +22,6 @@ public class Scene extends JFrame {
     private JFrame jFrame = new JFrame();
 
     public Scene() {
-        //guiButton = new Button();
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
     }
@@ -38,13 +37,10 @@ public class Scene extends JFrame {
 
     public void setRandomColor() {
         String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
-        //System.out.println(fishArrayList.get(1).getFishHex());
 
         for (Fish fish : fishArrayList) {
             fish.setColorHex(colors[(int) RandInt.between(0, 2)]);
         }
-
-        //System.out.println(fishArrayList.get(1).getFishHex());
     }
 
 
