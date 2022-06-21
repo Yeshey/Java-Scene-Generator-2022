@@ -20,9 +20,11 @@ public class Scene extends JFrame {
     private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
     private Terrain terrain; // composite
     private JFrame jFrame = new JFrame();
-    private State currentState = DayState.getInstance();
+    //TODO Ask Gottfreid why this attribute should be static (according to the task sheet)
+    private State currentState;
 
     public Scene() {
+        currentState = DayState.getInstance();
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
     }
