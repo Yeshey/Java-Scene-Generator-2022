@@ -13,5 +13,4 @@ public class Drawing {
 	public static Graphics pen() {
 		return Drawing.pen;
 	}
-
 }

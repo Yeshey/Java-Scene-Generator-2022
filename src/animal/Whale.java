@@ -22,7 +22,6 @@ public class Whale extends Fish {
 
     @Override
     protected void drawTail(){
-
         int tailXSize = (int)(Constants.FISH_NORMAL_DIAMETER_X *getFishSize()*Constants.FISH_TAIL_X_SIZE+30);
         int tailYSize = (int)(Constants.FISH_NORMAL_DIAMETER_Y *getFishSize()*Constants.FISH_TAIL_Y_SIZE+30);
 

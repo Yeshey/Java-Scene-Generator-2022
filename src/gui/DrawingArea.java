@@ -15,7 +15,7 @@ public class DrawingArea extends JPanel {
 
     private Scene ocean; //composite
 
-    public void DrawingArea() {
+    public DrawingArea() {
         ocean = null;
     }
 

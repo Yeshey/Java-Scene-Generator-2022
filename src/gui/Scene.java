@@ -7,6 +7,7 @@ import animal.Fish;
 import animal.Guppy;
 import animal.Whale;
 import environment.Terrain;
+import graphicstate.DayState;
 import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
@@ -38,7 +39,7 @@ public class Scene extends JFrame {
         String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
 
         for (Fish fish : fishArrayList) {
-            fish.setColorHex(colors[(int) RandInt.between(0, 2)]);
+            fish.setColorHex(colors[RandInt.between(0, 2)]);
         }
     }
 
@@ -100,7 +101,7 @@ public class Scene extends JFrame {
     }
 
     public void day(){
-        currentState = currentState.day()
+        currentState = currentState.day();
     }
 
     public void evening(){
