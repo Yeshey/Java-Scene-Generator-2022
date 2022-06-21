@@ -105,14 +105,14 @@ public class Scene extends JFrame {
     }
 
     public void evening(){
-
+        currentState = currentState.evening();
     }
 
     public void night(){
-
+        currentState = currentState.night();
     }
 
     public void sharkAttack(){
-
+        currentState = currentState.sharkAttack();
     }
 }
