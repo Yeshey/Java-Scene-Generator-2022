@@ -7,6 +7,7 @@ import animal.Fish;
 import animal.Guppy;
 import animal.Whale;
 import environment.Terrain;
+import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
 import utils.RandInt;
@@ -18,6 +19,7 @@ public class Scene extends JFrame {
     private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
     private Terrain terrain; // composite
     private JFrame jFrame = new JFrame();
+    private State currentState = DayState.getInstance();
 
     public Scene() {
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
@@ -95,5 +97,21 @@ public class Scene extends JFrame {
 
     public void resetTerrain(){
         terrain.newSeed();
+    }
+
+    public void day(){
+        currentState = currentState.day()
+    }
+
+    public void evening(){
+
+    }
+
+    public void night(){
+
+    }
+
+    public void sharkAttack(){
+
     }
 }
