@@ -115,6 +115,7 @@ public class Scene extends JFrame {
     }
 
     public void sharkAttack(){
+        System.out.println("Scene before getting into shark attack");
         currentState = currentState.sharkAttack();
     }
 }

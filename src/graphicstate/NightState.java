@@ -12,21 +12,26 @@ public class NightState extends State{
 
     @Override
     public State day() {
-        return null;
+        System.out.println("Night -> Day");
+        context.draw();
+        return DayState.getInstance();
     }
 
     @Override
     public State night() {
-        return null;
+        System.out.println("Already night... zzz...");
+        return this;
     }
 
     @Override
     public State evening() {
-        return null;
+        System.out.println("Night can't go backwards to evening silly");
+        return this;
     }
 
     @Override
     public State sharkAttack() {
-        return null;
+        System.out.println("Shark attacks can't happen at night");
+        return this;
     }
 }

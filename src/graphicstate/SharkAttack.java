@@ -1,23 +1,36 @@
 package graphicstate;
 
 public class SharkAttack extends State {
+    private static SharkAttack instance = new SharkAttack();
+
+    public static State getInstance() {
+        if (instance == null) {
+            instance = new SharkAttack();
+        }
+        return instance;
+    }
+
     @Override
     public State day() {
-        return null;
+        System.out.println("SharkAttack -> Day");
+        return DayState.getInstance();
     }
 
     @Override
     public State night() {
-        return null;
+        System.out.println("SharkAttack -> Night");
+        return NightState.getInstance();
     }
 
     @Override
     public State evening() {
-        return null;
+        System.out.println("SharkAttack -> Evening");
+        return EveningState.getInstance();
     }
 
     @Override
     public State sharkAttack() {
-        return null;
+        System.out.println("You want even more blood?!");
+        return this;
     }
 }
