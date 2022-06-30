@@ -22,6 +22,9 @@ public class Scene extends JFrame {
     private JFrame jFrame = new JFrame();
     //TODO Ask Gottfreid why this attribute should be static (according to the task sheet)
     private State currentState;
+    private String BackgroundColour;
+    private DrawingArea da;
+
 
     public Scene() {
         currentState = DayState.getInstance();
@@ -30,6 +33,14 @@ public class Scene extends JFrame {
     }
 
     public Point generateCoordinates() {
+        int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
+        int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight()-(Constants.TERRAIN_MAX_HEIGH+50));
+        Point point = new Point(coordsX, coordsY);
+
+        return point;
+    }
+
+    public Point generateSleepingCoordinates() {
         int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
         int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight()-(Constants.TERRAIN_MAX_HEIGH+50));
         Point point = new Point(coordsX, coordsY);
@@ -78,6 +89,55 @@ public class Scene extends JFrame {
         }
     }
 
+    public void sleepingFishesToArray() {
+        //TODO Check if necessary
+        if (!fishArrayList.isEmpty()) {
+            for (int i = 0; i < fishArrayList.size(); i++) {
+                fishArrayList.remove(i);
+            }
+        }
+
+        for (int i = 0; i < 15; i += 2) {
+            double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
+
+            Guppy newGuppy = new Guppy(generateCoordinates(), "#ff0000", size);
+            Whale newWhale = new Whale(generateCoordinates(), "#2F387B", size);
+
+            if (vacantProperty(newWhale)) {
+                fishArrayList.add(newWhale);
+            } else {
+                System.out.println("Whale overlap");
+
+                i -= 1;
+            }
+
+            if (vacantProperty(newGuppy)) {
+                fishArrayList.add(newGuppy);
+            } else {
+                System.out.println("Fish overlap");
+
+                i -= 1;
+            }
+        }
+    }
+
+    public void setNight() {
+        da.setSceneBackground("#1c3b82");
+
+    }
+
+    public void setDay() {
+        //pen.setBackground(Color.decode("#0096FF"));
+
+    }
+
+    public void setEvening() {
+
+    }
+
+    public void setSharkAttack() {
+
+    }
 
     private boolean vacantProperty(Fish newF) {
         boolean anyIntersection = false;
@@ -115,7 +175,6 @@ public class Scene extends JFrame {
     }
 
     public void sharkAttack(){
-        System.out.println("Scene before getting into shark attack");
         currentState = currentState.sharkAttack();
     }
 }
