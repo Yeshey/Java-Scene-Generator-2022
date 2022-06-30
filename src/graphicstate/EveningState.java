@@ -22,6 +22,7 @@ public class EveningState extends State{
     public State night() {
 
         System.out.println("Evening -> Night");
+        context.setNight();
         return NightState.getInstance();
     }
 
@@ -34,6 +35,7 @@ public class EveningState extends State{
     @Override
     public State sharkAttack() {
         System.out.println("Evening -> Shark attack");
+        context.setSharkAttack();
         return SharkAttack.getInstance();
     }
 }

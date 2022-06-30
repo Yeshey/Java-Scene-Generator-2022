@@ -19,6 +19,10 @@ public class DrawingArea extends JPanel {
         ocean = null;
     }
 
+    public void setSceneBackground(String colour){
+        setBackground(Color.decode(colour));
+    }
+
     public void newScene(){
         ocean = null;
     }
@@ -29,7 +33,7 @@ public class DrawingArea extends JPanel {
         Drawing.set(pen); // We need this before being able to draw anything
 
         if (ocean == null) {
-            ocean = new Scene();
+            ocean = new Scene(this);
         }
         ocean.draw();
     }

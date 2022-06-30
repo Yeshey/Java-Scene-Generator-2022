@@ -26,12 +26,14 @@ public class DayState extends State {
     @Override
     public State evening() {
         System.out.println("day -> evening");
+        context.setEvening();
         return EveningState.getInstance();
     }
 
     @Override
     public State sharkAttack() {
         System.out.println("day -> shark attack");
+        context.setSharkAttack();
         return SharkAttack.getInstance();
     }
 }

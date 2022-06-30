@@ -13,7 +13,7 @@ public class NightState extends State{
     @Override
     public State day() {
         System.out.println("Night -> Day");
-        context.draw();
+        context.setDay();
         return DayState.getInstance();
     }
 

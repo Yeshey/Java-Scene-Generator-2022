@@ -28,10 +28,10 @@ public class WindowGenerator extends JFrame implements ActionListener {
         setBounds(0, 0, screenSize.width, screenSize.height);
 
         setVisible(true);
-        drawing.setBackground(Color.decode("#0096FF"));
 
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+
     private void constructButtonMenu() {
         button.addButtonsToAPanel(this);
         button.addActionListener(this);

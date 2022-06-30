@@ -12,6 +12,7 @@ import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
 import utils.RandInt;
+import gui.Drawing;
 
 import javax.swing.*;
 
@@ -26,7 +27,9 @@ public class Scene extends JFrame {
     private DrawingArea da;
 
 
-    public Scene() {
+    public Scene(DrawingArea da) {
+        this.da = da;
+        BackgroundColour = "#0096FF";
         currentState = DayState.getInstance();
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
@@ -154,6 +157,7 @@ public class Scene extends JFrame {
     }
 
     public void draw() {
+        da.setSceneBackground("#0096FF");
         drawFishes();
         terrain.draw();
     }
