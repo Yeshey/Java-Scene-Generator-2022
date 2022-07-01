@@ -1,11 +1,17 @@
 package graphicstate;
 
+import gui.Scene;
+
 public class SharkAttack extends State {
-    private static SharkAttack instance = new SharkAttack();
+    private static SharkAttack instance;
+
+    public SharkAttack(Scene ocean){
+        this.context=ocean;
+    }
 
     public static State getInstance() {
         if (instance == null) {
-            instance = new SharkAttack();
+            instance = new SharkAttack(context);
         }
         return instance;
     }

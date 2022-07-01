@@ -1,11 +1,17 @@
 package graphicstate;
 
+import gui.Scene;
+
 public class DayState extends State {
-    private static DayState instance = new DayState();
+    private static DayState instance;
+
+    public DayState(Scene ocean){
+        this.context=ocean;
+    }
 
     public static State getInstance() {
         if (instance == null) {
-            instance = new DayState();
+            instance = new DayState(context);
         }
         return instance;
     }

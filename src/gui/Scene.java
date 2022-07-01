@@ -23,13 +23,14 @@ public class Scene extends JFrame {
     private JFrame jFrame = new JFrame();
     //TODO Ask Gottfreid why this attribute should be static (according to the task sheet)
     private State currentState;
-    private String BackgroundColour;
+    private String backgroundColour;
     private DrawingArea da;
 
 
     public Scene(DrawingArea da) {
         this.da = da;
-        BackgroundColour = "#0096FF";
+        backgroundColour = "#0096FF";
+        State.setContext(this);
         currentState = DayState.getInstance();
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
@@ -125,13 +126,11 @@ public class Scene extends JFrame {
     }
 
     public void setNight() {
-        da.setSceneBackground("#1c3b82");
-
+        backgroundColour = "#1c3b82";
     }
 
     public void setDay() {
-        //pen.setBackground(Color.decode("#0096FF"));
-
+        backgroundColour = "#0096FF";
     }
 
     public void setEvening() {
@@ -157,7 +156,7 @@ public class Scene extends JFrame {
     }
 
     public void draw() {
-        da.setSceneBackground("#0096FF");
+        da.setSceneBackground(backgroundColour);
         drawFishes();
         terrain.draw();
     }

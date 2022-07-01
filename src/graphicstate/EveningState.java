@@ -1,13 +1,18 @@
 package graphicstate;
 
 import org.w3c.dom.events.EventException;
+import gui.Scene;
 
 public class EveningState extends State{
-    private static EveningState instance = new EveningState();
+    private static EveningState instance;
+
+    public EveningState(Scene ocean){
+        this.context=ocean;
+    }
 
     public static State getInstance() {
         if (instance == null) {
-            instance = new EveningState();
+            instance = new EveningState(context);
         }
         return instance;
     }

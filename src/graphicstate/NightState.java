@@ -1,11 +1,17 @@
 package graphicstate;
 
+import gui.Scene;
+
 public class NightState extends State{
-    private static NightState instance = new NightState();
+    private static NightState instance;
+
+    public NightState(Scene ocean){
+        this.context=ocean;
+    }
 
     public static State getInstance() {
         if (instance == null) {
-            instance = new NightState();
+            instance = new NightState(context);
         }
         return instance;
     }
