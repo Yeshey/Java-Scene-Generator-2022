@@ -20,21 +20,21 @@ public class SharkAttack extends State {
     public State day() {
         System.out.println("SharkAttack -> Day");
         context.setDay();
-        return DayState.getInstance();
+        return DayState.getInstance(context);
     }
 
     @Override
     public State night() {
         System.out.println("SharkAttack -> Night");
         context.setNight();
-        return NightState.getInstance();
+        return NightState.getInstance(context);
     }
 
     @Override
     public State evening() {
         System.out.println("SharkAttack -> Evening");
         context.setEvening();
-        return EveningState.getInstance();
+        return EveningState.getInstance(context);
     }
 
     @Override

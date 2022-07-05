@@ -6,12 +6,13 @@ public class DayState extends State {
     private static DayState instance;
 
     public DayState(Scene ocean){
-        this.context=ocean;
+        super(ocean);
     }
 
-    public static State getInstance() {
-        if (instance == null) {
-            instance = new DayState(context);
+    public static State getInstance(Scene ocean) {
+
+        if (State.dayState == null) {
+            State.dayState = new DayState(ocean);
         }
         return instance;
     }
@@ -40,6 +41,6 @@ public class DayState extends State {
     public State sharkAttack() {
         System.out.println("day -> shark attack");
         context.setSharkAttack();
-        return SharkAttack.getInstance();
+        return SharkAttack.getInstance(context);
     }
 }

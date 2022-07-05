@@ -2,11 +2,13 @@ package graphicstate;
 
 import gui.Scene;
 
+import javax.xml.crypto.Data;
+
 public class NightState extends State{
     private static NightState instance;
 
     public NightState(Scene ocean){
-        this.context=ocean;
+        super(ocean);
     }
 
     public static State getInstance() {
@@ -20,7 +22,7 @@ public class NightState extends State{
     public State day() {
         System.out.println("Night -> Day");
         context.setDay();
-        return DayState.getInstance();
+        return DayState.getInstance(context);
     }
 
     @Override

@@ -7,7 +7,7 @@ public class EveningState extends State{
     private static EveningState instance;
 
     public EveningState(Scene ocean){
-        this.context=ocean;
+        super(ocean);
     }
 
     public static State getInstance() {
@@ -28,7 +28,7 @@ public class EveningState extends State{
 
         System.out.println("Evening -> Night");
         context.setNight();
-        return NightState.getInstance();
+        return NightState.getInstance(context);
     }
 
     @Override

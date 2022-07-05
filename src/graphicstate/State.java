@@ -10,7 +10,7 @@ public abstract class State {
     public abstract State evening();
     public abstract State sharkAttack();
 
-    public static void setContext(Scene ocean){
-        context = ocean;
-    }
+    //public static void setContext(Scene ocean){
+    //    context = ocean;
+    //}
 }

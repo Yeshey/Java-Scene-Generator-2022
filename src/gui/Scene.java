@@ -8,6 +8,7 @@ import animal.Guppy;
 import animal.Whale;
 import environment.Terrain;
 import graphicstate.DayState;
+import graphicstate.SharkAttack;
 import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
@@ -30,8 +31,7 @@ public class Scene extends JFrame {
     public Scene(DrawingArea da) {
         this.da = da;
         backgroundColour = "#0096FF";
-        State.setContext(this);
-        currentState = DayState.getInstance();
+        currentState = DayState.getInstance(this);
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
     }
@@ -93,38 +93,6 @@ public class Scene extends JFrame {
         }
     }
 
-    public void sleepingFishesToArray() {
-        //TODO Check if necessary
-        if (!fishArrayList.isEmpty()) {
-            for (int i = 0; i < fishArrayList.size(); i++) {
-                fishArrayList.remove(i);
-            }
-        }
-
-        for (int i = 0; i < 15; i += 2) {
-            double size = RandDouble.between(Constants.FISH_RAND_SIZE_RANGE_LOW, Constants.FISH_RAND_SIZE_RANGE_HIGH);
-
-            Guppy newGuppy = new Guppy(generateCoordinates(), "#ff0000", size);
-            Whale newWhale = new Whale(generateCoordinates(), "#2F387B", size);
-
-            if (vacantProperty(newWhale)) {
-                fishArrayList.add(newWhale);
-            } else {
-                System.out.println("Whale overlap");
-
-                i -= 1;
-            }
-
-            if (vacantProperty(newGuppy)) {
-                fishArrayList.add(newGuppy);
-            } else {
-                System.out.println("Fish overlap");
-
-                i -= 1;
-            }
-        }
-    }
-
     public void setNight() {
         backgroundColour = "#1c3b82";
     }
@@ -134,11 +102,12 @@ public class Scene extends JFrame {
     }
 
     public void setEvening() {
-
+        backgroundColour = "#356eb8";
     }
 
     public void setSharkAttack() {
-
+        backgroundColour = "#D695AB";
+        fishArrayList.clear();
     }
 
     private boolean vacantProperty(Fish newF) {
@@ -157,6 +126,7 @@ public class Scene extends JFrame {
 
     public void draw() {
         da.setSceneBackground(backgroundColour);
+
         drawFishes();
         terrain.draw();
     }
@@ -174,6 +144,7 @@ public class Scene extends JFrame {
     }
 
     public void night(){
+        System.out.println("line 177" + currentState);
         currentState = currentState.night();
     }
 
