@@ -53,44 +53,8 @@ public class Terrain extends JFrame {
         }
     }
 
-    public void drawVegetation(){
-        Drawing.pen().setColor(Color.decode(this.veggieColour)); // HEX representation
-        //Drawing.pen().setColor(Color.Color(160, 50, 87, 0.54));
-        
-        int randomnum = 100;
-
-        ArrayList<Integer> polygonXx = new ArrayList<Integer>();
-        ArrayList<Integer> polygonYy = new ArrayList<Integer>();
-
-        polygonXx.add(randomnum);
-        polygonXx.add((int)(randomnum+between(-200, -50)));
-        polygonXx.add((int)(randomnum+between(50, 200)));
-
-        polygonYy.add((int)screen_y+1000);
-        polygonYy.add((int)(screen_y+between(-Constants.TERRAIN_MAX_HEIGH, 0)));
-        polygonYy.add((int)(screen_y+between(-Constants.TERRAIN_MAX_HEIGH, 0)));
-
-        /*
-        int[] polygonX = {i,
-            (int)(i+between(-200, -50)), 
-            (int)(i+between(50, 200))};
-        int[] polygonY = {(int)screen_y+1000, 
-            (int)(screen_y+between(-Constants.TERRAIN_MAX_HEIGH, 0)), 
-            (int)(screen_y+between(-Constants.TERRAIN_MAX_HEIGH, 0))};
-        */
-        
-        int polygonN = 3;
-
-        int[] polygonX = polygonXx.stream().mapToInt(i -> i).toArray();
-        int[] polygonY = polygonYy.stream().mapToInt(i -> i).toArray();
-
-        Drawing.pen().fillPolygon(polygonX, polygonY, polygonN);
-
-    }
-
     public void draw() {
         r.setSeed(seed);
         drawRocks();
-        drawVegetation();
     }
 }

@@ -54,36 +54,27 @@ public class WindowGenerator extends JFrame implements ActionListener {
         if (e.getSource() == button.getFishesButton()) {
             drawing.getOcean().newFishToArray();
             tidyUpDrawingArea();
-            //System.out.println("Get fish attempt");
         } else if (e.getSource() == button.getTerrainButton()) {
             drawing.getOcean().resetTerrain();
             tidyUpDrawingArea();
-            //System.out.println("Get terrain attmept");
         } else if (e.getSource() == button.getResetButton()) {
             drawing.newScene();
             tidyUpDrawingArea();
-            //System.out.println("Cleanup tried");
         } else if (e.getSource() == button.getRandomColorButton()) {
             drawing.getOcean().setRandomColor();
             repaint();
-            //System.out.println("Color change tried");
         }else if (e.getSource() == button.getDayStateButton()) {
             drawing.getOcean().day();
             repaint();
-            //System.out.println("Day state change tried");
         }else if (e.getSource() == button.getEveningStateButton()) {
             drawing.getOcean().evening();
             repaint();
-            //System.out.println("Evening state change tried");
         }else if (e.getSource() == button.getNightStateButton()) {
             drawing.getOcean().night();
             repaint();
-            //System.out.println("Night state change tried");
         }else if (e.getSource() == button.getSharkAttackStateButton()) {
             drawing.getOcean().sharkAttack();
             repaint();
-            //System.out.println("Shark attack state change tried");
-
         }
 
     }

@@ -37,6 +37,17 @@ public class Shark extends Fish {
     @Override
     protected void drawMouth() {
 
+        int mouthSegmentSize = (int)(Constants.FISH_NORMAL_DIAMETER_X * getFishSize() / 5);
+        int rightCornerX = (int)(getCoords().x + Constants.FISH_NORMAL_DIAMETER_X * getFishSize() / 2)-3;
+        int rightCornerY = getCoords().y+20;
+
+        Drawing.pen().setColor(Color.decode("#000000")); // HEX representation
+        Drawing.pen().drawLine(
+                rightCornerX,
+                rightCornerY,
+                rightCornerX - mouthSegmentSize,
+                rightCornerY
+        );
     }
 
     @Override

@@ -14,8 +14,7 @@ import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
 import utils.RandInt;
-import gui.Drawing;
-
+import java.util.Random;
 import javax.swing.*;
 
 public class Scene extends JFrame {
@@ -45,11 +44,19 @@ public class Scene extends JFrame {
         return point;
     }
 
-    public void setRandomColor() {
-        String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
+    private String getRandomHexString(int numchars){
+        Random r = new Random();
+        StringBuffer sb = new StringBuffer();
+        while(sb.length() < numchars){
+            sb.append(Integer.toHexString(r.nextInt()));
+        }
 
+        return sb.toString().substring(0, numchars);
+    }
+
+    public void setRandomColor() {
         for (Fish fish : fishArrayList) {
-            fish.setColorHex(colors[RandInt.between(0, 2)]);
+            fish.setColorHex('#' + getRandomHexString(6));
         }
     }
 
@@ -139,7 +146,6 @@ public class Scene extends JFrame {
     }
 
     public void night(){
-        System.out.println("line 177" + currentState);
         currentState = currentState.night();
     }
 
