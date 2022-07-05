@@ -3,7 +3,6 @@ package graphicstate;
 import gui.Scene;
 
 public class DayState extends State {
-    private static DayState instance;
 
     public DayState(Scene ocean){
         super(ocean);
@@ -14,7 +13,7 @@ public class DayState extends State {
         if (State.dayState == null) {
             State.dayState = new DayState(ocean);
         }
-        return instance;
+        return State.dayState;
     }
 
     @Override
@@ -34,7 +33,7 @@ public class DayState extends State {
     public State evening() {
         System.out.println("day -> evening");
         context.setEvening();
-        return EveningState.getInstance();
+        return EveningState.getInstance(context);
     }
 
     @Override

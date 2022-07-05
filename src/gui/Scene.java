@@ -22,7 +22,6 @@ public class Scene extends JFrame {
     private ArrayList<Fish> fishArrayList = new ArrayList<>(); //fishes
     private Terrain terrain; // composite
     private JFrame jFrame = new JFrame();
-    //TODO Ask Gottfreid why this attribute should be static (according to the task sheet)
     private State currentState;
     private String backgroundColour;
     private DrawingArea da;
@@ -44,14 +43,6 @@ public class Scene extends JFrame {
         return point;
     }
 
-    public Point generateSleepingCoordinates() {
-        int coordsX = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getWidth());
-        int coordsY = (int) RandDouble.between(0, jFrame.getToolkit().getScreenSize().getHeight()-(Constants.TERRAIN_MAX_HEIGH+50));
-        Point point = new Point(coordsX, coordsY);
-
-        return point;
-    }
-
     public void setRandomColor() {
         String[] colors = {"#5D3DF3", "#00A36C", "#088F8F"};
 
@@ -62,7 +53,6 @@ public class Scene extends JFrame {
 
 
     public void newFishToArray() {
-        //TODO Check if necessary
         if (!fishArrayList.isEmpty()) {
             for (int i = 0; i < fishArrayList.size(); i++) {
                 fishArrayList.remove(i);

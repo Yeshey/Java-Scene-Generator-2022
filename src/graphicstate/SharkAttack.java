@@ -3,17 +3,16 @@ package graphicstate;
 import gui.Scene;
 
 public class SharkAttack extends State {
-    private static SharkAttack instance;
 
     public SharkAttack(Scene ocean){
-        this.context=ocean;
+        super(ocean);
     }
 
-    public static State getInstance() {
-        if (instance == null) {
-            instance = new SharkAttack(context);
+    public static State getInstance(Scene ocean) {
+        if (State.sharkAttack == null) {
+            State.sharkAttack = new SharkAttack(ocean);
         }
-        return instance;
+        return State.sharkAttack;
     }
 
     @Override

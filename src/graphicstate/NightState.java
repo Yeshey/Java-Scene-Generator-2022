@@ -5,17 +5,16 @@ import gui.Scene;
 import javax.xml.crypto.Data;
 
 public class NightState extends State{
-    private static NightState instance;
 
     public NightState(Scene ocean){
         super(ocean);
     }
 
-    public static State getInstance() {
-        if (instance == null) {
-            instance = new NightState(context);
+    public static State getInstance(Scene ocean) {
+        if (State.nightState == null) {
+            State.nightState = new NightState(ocean);
         }
-        return instance;
+        return State.nightState;
     }
 
     @Override

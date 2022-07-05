@@ -4,17 +4,16 @@ import org.w3c.dom.events.EventException;
 import gui.Scene;
 
 public class EveningState extends State{
-    private static EveningState instance;
 
     public EveningState(Scene ocean){
         super(ocean);
     }
 
-    public static State getInstance() {
-        if (instance == null) {
-            instance = new EveningState(context);
+    public static State getInstance(Scene ocean) {
+        if (State.eveningState == null) {
+            State.eveningState = new EveningState(ocean);
         }
-        return instance;
+        return State.eveningState;
     }
 
     @Override
@@ -41,6 +40,6 @@ public class EveningState extends State{
     public State sharkAttack() {
         System.out.println("Evening -> Shark attack");
         context.setSharkAttack();
-        return SharkAttack.getInstance();
+        return SharkAttack.getInstance(context);
     }
 }
