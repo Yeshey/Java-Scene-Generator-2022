@@ -12,6 +12,13 @@ public abstract class State {
         context = ocean;
     }
 
+    public static void resetState() {
+        dayState = null;
+        eveningState = null;
+        nightState = null;
+        sharkAttack = null;
+    }
+
     public abstract State day();
     public abstract State night();
     public abstract State evening();

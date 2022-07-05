@@ -16,7 +16,7 @@ public class Terrain extends JFrame {
     private double screen_x;
     private double screen_y;
     private long seed;
-    Random r;
+    private Random r;
 
     public Terrain(double screen_x, double screen_y, long seed) {
         this.terrainColour = "#964B00";

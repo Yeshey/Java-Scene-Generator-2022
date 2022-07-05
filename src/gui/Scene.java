@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import animal.Fish;
 import animal.Guppy;
+import animal.Shark;
 import animal.Whale;
 import environment.Terrain;
 import graphicstate.DayState;
@@ -30,6 +31,7 @@ public class Scene extends JFrame {
     public Scene(DrawingArea da) {
         this.da = da;
         backgroundColour = "#0096FF";
+        State.resetState();
         currentState = DayState.getInstance(this);
         terrain = new Terrain(jFrame.getToolkit().getScreenSize().getWidth(), jFrame.getToolkit().getScreenSize().getHeight(),(int)RandDouble.between(0,1000));
         newFishToArray();
@@ -96,8 +98,11 @@ public class Scene extends JFrame {
     }
 
     public void setSharkAttack() {
-        backgroundColour = "#D695AB";
+        backgroundColour = "#e00443";
         fishArrayList.clear();
+        Point point = new Point(500, 300);
+        Shark shark = new Shark(point, "#9212b3", 4);
+        fishArrayList.add(shark);
     }
 
     private boolean vacantProperty(Fish newF) {
