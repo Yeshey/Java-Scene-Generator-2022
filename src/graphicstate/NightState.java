@@ -2,8 +2,6 @@ package graphicstate;
 
 import gui.Scene;
 
-import javax.xml.crypto.Data;
-
 public class NightState extends State{
 
     public NightState(Scene ocean){

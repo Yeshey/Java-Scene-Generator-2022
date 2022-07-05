@@ -80,6 +80,6 @@ public class WindowGenerator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-    	WindowGenerator anApplication = new WindowGenerator("Window Title"); // Create a window
+    	new WindowGenerator("Window Title"); // Create a window
      }
 }

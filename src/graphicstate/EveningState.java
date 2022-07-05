@@ -1,6 +1,5 @@
 package graphicstate;
 
-import org.w3c.dom.events.EventException;
 import gui.Scene;
 
 public class EveningState extends State{

@@ -9,11 +9,9 @@ import animal.Shark;
 import animal.Whale;
 import environment.Terrain;
 import graphicstate.DayState;
-import graphicstate.SharkAttack;
 import graphicstate.State;
 import utils.Constants;
 import utils.RandDouble;
-import utils.RandInt;
 import java.util.Random;
 import javax.swing.*;
 

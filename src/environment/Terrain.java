@@ -4,7 +4,6 @@ import gui.Drawing;
 import utils.Constants;
 import utils.RandDouble;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JFrame;
@@ -12,7 +11,6 @@ import java.awt.Color;
 
 public class Terrain extends JFrame {
     private String terrainColour;
-    private String veggieColour;
     private double screen_x;
     private double screen_y;
     private long seed;
@@ -20,7 +18,6 @@ public class Terrain extends JFrame {
 
     public Terrain(double screen_x, double screen_y, long seed) {
         this.terrainColour = "#964B00";
-        this.veggieColour = "#00FF00";
         this.screen_x = screen_x;
         this.screen_y = screen_y;
         this.seed = seed;
