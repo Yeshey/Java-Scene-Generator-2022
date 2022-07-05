@@ -61,9 +61,7 @@ public class Scene extends JFrame {
 
     public void newFishToArray() {
         if (!fishArrayList.isEmpty()) {
-            for (int i = 0; i < fishArrayList.size(); i++) {
-                fishArrayList.remove(i);
-            }
+            fishArrayList.clear();
         }
 
         for (int i = 0; i < 15; i += 2) {
@@ -119,8 +117,8 @@ public class Scene extends JFrame {
     }
 
     public void drawFishes() {
-        for (int i = 0; i < fishArrayList.size(); i++) {
-            fishArrayList.get(i).draw();
+        for (Fish fish : fishArrayList) {
+            fish.draw();
         }
     }
 
